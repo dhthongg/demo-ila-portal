@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home Page - portal</title>
+
+    <!-- Global stylesheets -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="limitless/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" />
+    <link href="limitless/global_assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" />
+    <link href="limitless/assets/css/all.min.css" rel="stylesheet" />
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script src="limitless/global_assets/js/main/jquery.min.js"></script>
+    <script src="limitless/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    
+    <script>$(document).ready(function () {
+            var securityToken = $('input[name="__RequestVerificationToken"]').val();
+            var headers = {};
+            headers['__RequestVerificationToken'] = securityToken;
+            $.ajaxSetup({
+                headers: headers
+            });
+        });</script>
+    <!-- Theme JS files -->
+    <script src="limitless/global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/legacy.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/jgrowl.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/extensions/jquery_ui/interactions.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/ui/prism.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/sweet_alert.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/pnotify.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="limitless/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script src="limitless/assets/js/app.js"></script>
+    <!-- /theme JS files -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href="css/site.css" rel="stylesheet" />
+
+</head>
+<body class="custom-scrollbars">
+<form action="/Home/CreatePaymentRequest" id="__AjaxAntiForgeryForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="CfDJ8KheHp4keuZMobPh6X30GdV31b9-GEHLDoo0w4hs7dhP_eqo6pL7poZ5U9roE82qFyidXYy8iLJQq4yRI2nSYXdqqHKE4aQT3ST3ZEqlxv8m0LVVl91DgIDR4CUmT09qd5euoeP7SGeMdnSNcnZitlQ" /></form>    <!-- Main navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark navbar-static">
+    <div class="d-flex flex-1 d-lg-none">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+            <i class="icon-paragraph-justify3"></i>
+        </button>
+        <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+            <i class="icon-transmission"></i>
+        </button>
+    </div>
+    <div class="navbar-brand text-center text-lg-left">
+        <a class="nav-link text-white p-0" href="">
+            <i class="icon-home2"></i>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse order-2 order-lg-1" id="navbar-mobile">
+        <div class="navbar-nav ml-lg-auto">
+            <select id="company" class="select select2 form-control form-control-select2"></select>
+        </div>
+    </div>
+    <ul class="navbar-nav flex-row order-1 order-lg-2 flex-1 flex-lg-0 justify-content-end align-items-center">
+        <li class="nav-item nav-item-dropdown-lg dropdown dropdown-user h-100">
+            <a href="#" class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100" data-toggle="dropdown" aria-expanded="false">
+                <img src="img/icon-user.svg" class="rounded-pill mr-lg-2" height="34" alt="" />
+                <span class="d-none d-lg-inline-block">User's name</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#company').select2({
+            width: 250,
+            data: [
+                { id: 1, text: "ILA" }
+            ]
+        });
+        $('#company').val('1');
+        $('#company').trigger('change');
+    });
+</script>
+    <!-- /main navbar -->
+    <!-- Page content -->
+    <div b-o3je31nlgo class="page-content">
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg sidebar-main-resized">
+	<!-- Sidebar content -->
+	<div class="sidebar-content">
+		<!-- User menu -->
+		<div class="sidebar-section sidebar-user my-1">
+			<div class="sidebar-section-body">
+				<div class="media">
+					<a class="mr-3" href="">
+						<img src="img/icon-user.svg" class="rounded-circle" alt="" />
+					</a>
+
+					<div class="media-body">
+						<div class="font-weight-semibold">User's name</div>
+						<div class="font-size-sm line-height-sm opacity-50">
+							Hello
+						</div>
+					</div>
+
+                    <div class="ml-3 align-self-center">
+                        <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                            <i class="icon-transmission"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
+                            <i class="icon-cross2"></i>
+                        </button>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<!-- /user menu -->
+		<!-- Main navigation -->
+		<div class="sidebar-section">
+            <ul class="nav nav-sidebar" data-nav-type="accordion">
+                <!-- Main -->
+                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
+                <li class="nav-item nav-item-submenu nav-item-open">
+                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Payment Request</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Payment Request" style="display: block">
+                        <li class="nav-item"><a class="nav-link" href="Home/PaymentRequest"><i class="icon-list2"></i>List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Home/CreatePaymentRequest"><i class="icon-new-tab"></i>Create</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-copy"></i> <span>Cash Advance</span></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-sphere"></i> <span>Cash Advance Settle</span></a></li>
+                <!-- /main -->
+            </ul>
+		</div>
+		<!-- /main navigation -->
+	</div>
+	<!-- /sidebar content -->
+
+</div>
+        <!-- /main sidebar -->
+        <!-- Main content -->
+        <div b-o3je31nlgo class="content-wrapper">
+            <!-- Inner content -->
+            <div b-o3je31nlgo class="content-inner">
+                <!-- Page header -->
+                <!-- /page header -->
+                
+<!-- Page header -->
+<div class="page-header page-header-light no-border-bot">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a class="breadcrumb-item" href=""><i class="icon-home2 mr-2"></i> Home</a>
+                <a class="breadcrumb-item" href="Home/PaymentRequest">Payment request</a>
+                <span class="breadcrumb-item active">Create</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+        <div class="header-elements d-none">
+            <div class="breadcrumb justify-content-center">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+<!-- Content area -->
+<div class="content">
+    <!--HEADER-->
+    <div class="card card-cus-ax">
+        <div class="card-header header-elements-inline pb-1">
+            <h5 class="card-title">Header</h5>
+            <div class="header-elements">
+                <div class="list-icons">
+                    <a class="list-icons-item" data-action="collapse"></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-top-dashed mb-3 mx-3"></div>
+        <div class="d-flex px-3 mb-3 justify-content-between">
+            <div class="d-flex">
+                <div class="">
+                    <a href="#" class="btn btn-success-100 text-success"><i class="icon-copy3 mr-2"></i>Copy</a>
+                </div>
+                <div class="ml-3">
+                    <a href="#" class="btn btn-pink-100 text-pink"><i class="icon-bin mr-2"></i>Delete</a>
+                </div>
+                <div class="ml-3">
+                    <a href="#" class="btn btn-purple-100 text-purple"><i class="icon-add mr-2"></i>Save</a>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="ml-3">
+                    <a href="#" class="btn btn-primary"><i class="icon-paperplane mr-2"></i>Submit</a>
+                </div>
+            </div>
+        </div>
+        <div class="collapse show">
+            <div class="card-body pt-0 pb-2">
+                <form action="#">
+                    <div class="row">
+                        <!-- Payment request information -->
+                        <div class="col-md-4">
+                            <fieldset class="">
+                                <legend class="font-weight-semibold mb-3 pb-1"><i class="icon-reading mr-2"></i> Payment request information</legend>
+                                <!-- Requested By -->
+                                <div class="form-group">
+                                    <label class="">Requested By:</label>
+                                    <input type="text" id="requestedBy" name="" class="form-control" disabled value="Xuan Tran" placeholder="">
+                                </div>
+                                <!-- /requested By -->
+                                <!-- Document Number -->
+                                <div class="form-group">
+                                    <label class="">Document Number:</label>
+                                    <input type="text" id="documentNumber" name="" class="form-control" disabled value="PRFY22-000000037" placeholder="">
+                                </div>
+                                <!-- /document Number -->
+                                <!-- Company -->
+                                <div class="form-group">
+                                    <label class="">Company:</label>
+                                    <input type="text" id="company" name="" class="form-control" disabled value="iloa" placeholder="">
+                                </div>
+                                <!-- /company -->
+                                <!-- Payment Type -->
+                                <div class="form-group">
+                                    <label class="">Payment Type:</label>
+                                    <select id="paymentType" class="select select2 form-control form-control-select2"></select>
+                                </div>
+                                <!-- /payment Type -->
+                                <!-- Budget check Date -->
+                                <div class="form-group">
+                                    <label class="">Budget check Date<span class="text-pink">(*)</span>:</label>
+                                    <div class="input-group">
+                                        <input id="budgetCheckDate" type="text" required class="form-control daterange-single" value="18/07/2023">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- /budget check Date -->
+                                <!-- Due Date -->
+                                <div class="form-group">
+                                    <label class="">Due Date:</label>
+                                    <div class="input-group">
+                                        <input id="dueDate" type="text" class="form-control daterange-single" value="18/07/2023">
+                                        <span class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- /due Date -->
+                                <!-- Expense Category -->
+                                <div class="form-group">
+                                    <label class="">Expense Category<span class="text-pink">(*)</span>:</label>
+                                    <select id="expenseCategory" required class="select select2 form-control form-control-select2"></select>
+                                </div>
+                                <!-- /expense Category -->
+                                <!-- Attachment URL -->
+                                <div class="form-group">
+                                    <label class="">Attachment URL:</label>
+                                    <input type="text" id="attachmentURL" name="" class="form-control" disabled value="" placeholder="">
+                                </div>
+                                <!-- /attachment URL -->
+                                <!-- Department -->
+                                <div class="form-group">
+                                    <label class="">Department<span class="text-pink">(*)</span>:</label>
+                                    <select id="department" required class="select select2 form-control form-control-select2"></select>
+                                </div>
+                                <!-- /department-->
+                                <!-- Center -->
+                                <div class="form-group">
+                                    <label class="">Center<span class="text-pink">(*)</span>:</label>
+                                    <select id="center" required class="select select2 form-control form-control-select2"></select>
+                                </div>
+                                <!-- /center -->
+                                <!-- Description -->
+                                <div class="form-group">
+                                    <label class="">Description<span class="text-pink">(*)</span>:</label>
+                                    <textarea rows="2" cols="3" id="description" name="" required class="form-control" value="abc" placeholder="Description"></textarea>
+                                </div>
+                                <!-- /description -->
+                            </fieldset>
+                        </div>
+                        <!-- /Payment request information -->
+                        <!-- Vendor information -->
+                        <div class="col-md-4">
+                            <fieldset class="">
+                                <legend class="font-weight-semibold mb-3 pb-1"><i class="icon-truck mr-2"></i> Vendor information</legend>
+                                <!-- Vendor Account -->
+                                <div class="form-group">
+                                    <label class="">Vendor Account<span class="text-pink">(*)</span>:</label>
+                                    <select id="vendorAccount" required class="select select2 form-control form-control-select2"></select>
+                                </div>
+                                <!-- /vendor Account -->
+                                <!-- Vendor Name -->
+                                <div class="form-group">
+                                    <label class="">Vendor Name:</label>
+                                    <input type="text" id="vendorName" name="" class="form-control" value="" placeholder="Vendor Name">
+                                </div>
+                                <!-- /vendor Name -->
+                                <!-- Beneficiary Name -->
+                                <div class="form-group">
+                                    <label class="">Beneficiary Name<span class="text-pink">(*)</span>:</label>
+                                    <input type="text" id="beneficiaryName" name="" required class="form-control" value="abc" placeholder="Beneficiary Name">
+                                </div>
+                                <!-- /beneficiary Name -->
+                                <!-- Bank Account No. -->
+                                <div class="form-group">
+                                    <label class="">Bank Account No.<span class="text-pink">(*)</span>:</label>
+                                    <input type="text" id="bankAccountNo" name="" required class="form-control" value="123" placeholder="Bank Account No.">
+                                </div>
+                                <!-- /bank Account No. -->
+                                <!-- Bank Name -->
+                                <div class="form-group">
+                                    <label class="">Bank Name<span class="text-pink">(*)</span>:</label>
+                                    <input type="text" id="bankName" name="" required class="form-control" value="xyz" placeholder="Bank Name">
+                                </div>
+                                <!-- /bank Name -->
+                                <!-- Tax Code (Tax register No.) -->
+                                <div class="form-group">
+                                    <label class="">Tax Code (Tax register No.):</label>
+                                    <input type="text" id="taxCode" name="" class="form-control" value="" placeholder="Tax Code (Tax register No.)">
+                                </div>
+                                <!-- /tax Code (Tax register No.) -->
+                                <!-- PO Invoice Number -->
+                                <div class="form-group">
+                                    <label class="">PO Invoice Number:</label>
+                                    <select id="poInvoiceNumber" class="select select2 form-control form-control-select2"></select>
+                                </div>
+                                <!-- /po Invoice Number -->
+                                <!-- Currency -->
+                                <div class="form-group">
+                                    <label class="">Currency<span class="text-pink">(*)</span>:</label>
+                                    <select id="currency" required class="select select2 form-control form-control-select2"></select>
+                                </div>
+                                <!-- /currency -->
+                                <!-- Exchange Rate -->
+                                <div class="form-group">
+                                    <label class="">Exchange Rate<span class="text-pink">(*)</span>:</label>
+                                    <input type="text" id="exchangeRate" name="" required class="form-control" disabled value="1.00" placeholder="">
+                                </div>
+                                <!-- /exchange Rate -->
+                                <!-- Total Amount -->
+                                <div class="form-group">
+                                    <label class="">Total Amount:</label>
+                                    <input type="text" id="totalAmount" name="" class="form-control" disabled value="0.00" placeholder="">
+                                </div>
+                                <!-- /total Amount -->
+                                <!-- Request PO Invoice -->
+                                <div class="form-group">
+                                    <label class="">Request PO Invoice:</label>
+                                    <label class="custom-control custom-control-success custom-checkbox">
+                                        <input id="requestPOInvoice" type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </div>
+                                <!-- /request PO Invoice -->
+                            </fieldset>
+                        </div>
+                        <!-- /Vendor information -->
+                        <!-- /Workflow information -->
+                        <div class="col-md-4">
+                            <fieldset class="mb-3">
+                                <legend class="font-weight-semibold mb-3 pb-1"><i class="icon-file-text2 mr-2"></i> Workflow information</legend>
+                                <!-- Status -->
+                                <div class="form-group">
+                                    <label class="">Status:</label>
+                                    <input type="text" id="status" name="" class="form-control" disabled value="Draft" placeholder="">
+                                </div>
+                                <!-- /status -->
+                                <!-- Assigned to User -->
+                                <div class="form-group">
+                                    <label class="">Assigned to User:</label>
+                                    <input type="text" id="assignedToUser" name="" class="form-control" disabled value="" placeholder="">
+                                </div>
+                                <!-- /assigned to User -->
+                                <!-- Department Head -->
+                                <div class="form-group">
+                                    <label class="">Department Head:</label>
+                                    <input type="text" id="departmentHead" name="" class="form-control" disabled value="" placeholder="">
+                                </div>
+                                <!-- /department Head -->
+                                <!-- Final Approver -->
+                                <div class="form-group">
+                                    <label class="">Final Approver:</label>
+                                    <input type="text" id="finalApprover" name="" class="form-control" disabled value="" placeholder="">
+                                </div>
+                                <!-- /final Approver -->
+                                <!-- Budget checked Status -->
+                                <div class="form-group">
+                                    <label class="">Budget checked Status:</label>
+                                    <input type="text" id="budgetCheckedStatus" name="" class="form-control" disabled value="Budget check not performed" placeholder="">
+                                </div>
+                                <!-- /budget checked Status -->
+                                <!-- Message Check Budget -->
+                                <div class="form-group">
+                                    <label class="">Message Check Budget:</label>
+                                    <input type="text" id="messagedCheckBudget" name="" class="form-control" disabled value="" placeholder="">
+                                </div>
+                                <!-- /message Check Budget -->
+                                <!-- WF Status -->
+                                <div class="form-group">
+                                    <label class="">WF Status:</label>
+                                    <input type="text" id="wfStatus" name="" class="form-control" disabled value="" placeholder="">
+                                </div>
+                                <!-- /wf Status -->
+                                <!-- Next PIC -->
+                                <div class="form-group">
+                                    <label class="">Next PIC:</label>
+                                    <input type="text" id="nextPIC" name="" class="form-control" disabled value="" placeholder="">
+                                </div>
+                                <!-- /next PIC -->
+                                <!-- Note -->
+                                <div class="form-group">
+                                    <label class="">Note:</label>
+                                    <textarea rows="2" cols="3" type="text" id="note" name="" class="form-control" value="" placeholder="Note"></textarea>
+                                </div>
+                                <!-- /note -->
+                            </fieldset>
+                        </div>
+                        <!-- /workflow information -->
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--/HEADER-->
+    <!--ATTACH-->
+    <div class="card card-cus-ax">
+        <div class="card-header header-elements-inline pb-1">
+            <h5 class="card-title">Attach file</h5>
+            <div class="header-elements">
+                <div class="list-icons">
+                    <a class="list-icons-item" data-action="collapse"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="collapse show">
+            <div class="border-top-dashed mb-3 mx-3"></div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex">
+                                <div class="">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="uploadFiles" multiple="">
+                                        <label class="custom-file-label" for="uploadFiles">Choose file</label>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <a href="#" class="btn btn-primary-100 text-primary"><i class="icon-upload mr-2"></i>Upload</a>
+                                </div>
+                                <div class="ml-3">
+                                    <a href="#" class="btn btn-pink-100 text-pink"><i class="icon-bin mr-2"></i>Delete</a>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="ml-3">
+                                    <a href="#" class="btn btn-success-100 text-success"><i class="icon-folder-open mr-2"></i>Open folder</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="table-responsive mt-3">
+                            <table class="table table-xs">
+                                <thead class="cus-header-lavender">
+                                    <tr>
+                                        <th class="px-2">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="check-file-1">
+                                                <label class="custom-control-label" for="check-file-1"></label>
+                                            </div>
+                                        </th>
+                                        <th class="px-2 text-uppercase text-bold">File name</th>
+                                        <th class="px-2 text-uppercase text-bold">Tools</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd">
+                                        <td>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="check-file-2">
+                                                <label class="custom-control-label" for="check-file-2"></label>
+                                            </div>
+                                        </td>
+                                        <td class="wmin-lg-300">
+                                            File_abc_1.xlsx
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
+                                            <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="check-file-3">
+                                                <label class="custom-control-label" for="check-file-3"></label>
+                                            </div>
+                                        </td>
+                                        <td class="wmin-lg-300">
+                                            File_abc_1.xlsx
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
+                                            <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="check-file-4">
+                                                <label class="custom-control-label" for="check-file-4"></label>
+                                            </div>
+                                        </td>
+                                        <td class="wmin-lg-300">
+                                            File_abc_1.xlsx
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
+                                            <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--/ATTACH-->
+    <!--LINES-->
+    <div class="card card-cus-ax">
+        <div class="card-header header-elements-inline pb-1">
+            <h5 class="card-title">ERP Journal No</h5>
+            <div class="header-elements">
+                <div class="list-icons">
+                    <a class="list-icons-item" data-action="collapse"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="collapse show">
+            <div class="border-top-dashed mb-3 mx-3"></div>
+            <div class="card-body">
+                <div class="d-flex justify-content-start">
+                    <div class="d-flex">
+                        <div class="">
+                            <a href="#" class="btn btn-primary-100 text-primary"><i class="icon-add mr-2"></i>New</a>
+                        </div>
+                        <div class="ml-3">
+                            <a href="#" class="btn btn-pink-100 text-pink"><i class="icon-bin mr-2"></i>Delete</a>
+                        </div>
+                        <div class="ml-3">
+                            <a href="#" class="btn btn-success-100 text-success"><i class="icon-import mr-2"></i>Import lines</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive mt-3">
+                    <table class="table table-xs">
+                        <thead class="cus-header-lavender">
+                            <tr>
+                                <th class="px-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="check-file-5">
+                                        <label class="custom-control-label" for="check-file-5"></label>
+                                    </div>
+                                </th>
+                                <th class="px-2 text-uppercase text-bold">No.</th>
+                                <th class="px-2 text-uppercase text-bold">Description</th>
+                                <th class="px-2 text-uppercase text-bold">Amount (Included VAT)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd">
+                                <td class="wmin-lg-300">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="check-file-6">
+                                        <label class="custom-control-label" for="check-file-6"></label>
+                                    </div>
+                                </td>
+                                <td class="wmin-lg-350">
+                                    1
+                                </td>
+                                <td class="wmin-lg-350">
+                                    Thong tin thanh toan
+                                </td>
+                                <td>
+                                    2,000,000
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="wmin-lg-300">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="check-file-7">
+                                        <label class="custom-control-label" for="check-file-7"></label>
+                                    </div>
+                                </td>
+                                <td class="wmin-lg-350">
+                                    1
+                                </td>
+                                <td class="wmin-lg-350">
+                                    Thong tin thanh toan
+                                </td>
+                                <td>
+                                    2,000,000
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="wmin-lg-300">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="check-file-8">
+                                        <label class="custom-control-label" for="check-file-8"></label>
+                                    </div>
+                                </td>
+                                <td class="wmin-lg-350">
+                                    1
+                                </td>
+                                <td class="wmin-lg-350">
+                                    Thong tin thanh toan
+                                </td>
+                                <td>
+                                    2,000,000
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--/LINES-->
+</div>
+<!-- /content area -->
+
+<script>
+    $(document).ready(function () {
+        //Payment Type.
+        var arr = [
+            { id: 0, text: 'Payment for PO' },
+            { id: 1, text: 'Payment non-PO' },
+            { id: 2, text: 'Payment for others' },
+            { id: 3, text: 'Payment in cash' }
+        ];
+
+        $('#paymentType').select2({
+            //minimumResultsForSearch: Infinity,
+            data: arr
+        });
+
+        //Budget check Date
+        $('.daterange-single').pickadate({
+            today: '',
+            close: '',
+            clear: '',
+            format: 'dd/mm/yyyy',
+            //formatSubmit: 'MM/dd/yyyy',
+            onOpen: function () {
+            },
+            onSet: function () {
+            }
+        });
+
+        //Expense category.
+        var arr2 = [
+            { id: 0, text: 'Administration Expenses' }
+        ];
+
+        $('#expenseCategory').select2({
+            //minimumResultsForSearch: Infinity,
+            data: arr2
+        });
+
+        //Department
+        var arr3 = [
+            { id: 0, text: 'TC - Control Exp.' }
+        ];
+
+        $('#department').select2({
+            //minimumResultsForSearch: Infinity,
+            data: arr3
+        });
+
+        //Center
+        var arr4 = [
+            { id: 0, text: 'ILO-Nha Be' }
+        ];
+
+        $('#center').select2({
+            //minimumResultsForSearch: Infinity,
+            data: arr4
+        });
+
+        //Center
+        var arr5 = [
+            { id: 0, text: 'VD0218' }
+        ];
+
+        $('#vendorAccount').select2({
+            //minimumResultsForSearch: Infinity,
+            data: arr5
+        });
+
+        //PO Invoice Number
+        var arr6 = [
+            { id: 0, text: '--' }
+        ];
+
+        $('#poInvoiceNumber').select2({
+            //minimumResultsForSearch: Infinity,
+            data: arr6
+        });
+
+        //Currency
+        var arr7 = [
+            { id: 0, text: 'VND' },
+            { id: 1, text: 'USD' },
+            { id: 2, text: 'AUD' }
+        ];
+
+        $('#currency').select2({
+            //minimumResultsForSearch: Infinity,
+            data: arr7
+        });
+    });
+    
+</script>
+                <!-- Footer -->
+                <div class="navbar navbar-expand-lg navbar-light border-bottom-0 border-top">
+    <div class="text-center d-lg-none w-100">
+        <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+            <i class="icon-unfold mr-2"></i>
+            Footer
+        </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-footer">
+        <span class="navbar-text">
+            &copy; 2023 - portal - <a href="Home/Privacy">Privacy</a>
+        </span>
+    </div>
+</div>
+                <!-- /footer -->
+            </div>
+            <!-- /inner content -->
+        </div>
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
+    
+
+    <script src="js/site.js?v=nFxEp0x2V_DlU-zth26CPiJ9akSTuuscnu2CbLpk1Fs"></script>
+    
+</body>
+</html>

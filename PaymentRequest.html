@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home Page - portal</title>
+
+    <!-- Global stylesheets -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="limitless/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" />
+    <link href="limitless/global_assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" />
+    <link href="limitless/assets/css/all.min.css" rel="stylesheet" />
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script src="limitless/global_assets/js/main/jquery.min.js"></script>
+    <script src="limitless/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    
+    <script>$(document).ready(function () {
+            var securityToken = $('input[name="__RequestVerificationToken"]').val();
+            var headers = {};
+            headers['__RequestVerificationToken'] = securityToken;
+            $.ajaxSetup({
+                headers: headers
+            });
+        });</script>
+    <!-- Theme JS files -->
+    <script src="limitless/global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/legacy.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/jgrowl.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/extensions/jquery_ui/interactions.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/ui/prism.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/sweet_alert.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/pnotify.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="limitless/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script src="limitless/assets/js/app.js"></script>
+    <!-- /theme JS files -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href="css/site.css" rel="stylesheet" />
+
+</head>
+<body class="custom-scrollbars">
+<form action="/Home/PaymentRequest" id="__AjaxAntiForgeryForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="CfDJ8KheHp4keuZMobPh6X30GdUNpiVgBgBkgNTl_f4NRxx9eWrYNXh87Y7lLZl1BRIp9Q6y3Itbr_uR269rBeiNOYIDty_DvAMnNXXavg0N8R36dPqX2enI59LXgLgmByfgVFIHJPWA9jlTca40AxBtmXc" /></form>    <!-- Main navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark navbar-static">
+    <div class="d-flex flex-1 d-lg-none">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+            <i class="icon-paragraph-justify3"></i>
+        </button>
+        <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+            <i class="icon-transmission"></i>
+        </button>
+    </div>
+    <div class="navbar-brand text-center text-lg-left">
+        <a class="nav-link text-white p-0" href="">
+            <i class="icon-home2"></i>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse order-2 order-lg-1" id="navbar-mobile">
+        <div class="navbar-nav ml-lg-auto">
+            <select id="company" class="select select2 form-control form-control-select2"></select>
+        </div>
+    </div>
+    <ul class="navbar-nav flex-row order-1 order-lg-2 flex-1 flex-lg-0 justify-content-end align-items-center">
+        <li class="nav-item nav-item-dropdown-lg dropdown dropdown-user h-100">
+            <a href="#" class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100" data-toggle="dropdown" aria-expanded="false">
+                <img src="img/icon-user.svg" class="rounded-pill mr-lg-2" height="34" alt="" />
+                <span class="d-none d-lg-inline-block">User's name</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#company').select2({
+            width: 250,
+            data: [
+                { id: 1, text: "ILA" }
+            ]
+        });
+        $('#company').val('1');
+        $('#company').trigger('change');
+    });
+</script>
+    <!-- /main navbar -->
+    <!-- Page content -->
+    <div b-o3je31nlgo class="page-content">
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg sidebar-main-resized">
+	<!-- Sidebar content -->
+	<div class="sidebar-content">
+		<!-- User menu -->
+		<div class="sidebar-section sidebar-user my-1">
+			<div class="sidebar-section-body">
+				<div class="media">
+					<a class="mr-3" href="">
+						<img src="img/icon-user.svg" class="rounded-circle" alt="" />
+					</a>
+
+					<div class="media-body">
+						<div class="font-weight-semibold">User's name</div>
+						<div class="font-size-sm line-height-sm opacity-50">
+							Hello
+						</div>
+					</div>
+
+                    <div class="ml-3 align-self-center">
+                        <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                            <i class="icon-transmission"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
+                            <i class="icon-cross2"></i>
+                        </button>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<!-- /user menu -->
+		<!-- Main navigation -->
+		<div class="sidebar-section">
+            <ul class="nav nav-sidebar" data-nav-type="accordion">
+                <!-- Main -->
+                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
+                <li class="nav-item nav-item-submenu nav-item-open">
+                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Payment Request</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Payment Request" style="display: block">
+                        <li class="nav-item"><a class="nav-link" href="Home/PaymentRequest"><i class="icon-list2"></i>Payment Request</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Home/CreatePaymentRequest"><i class="icon-new-tab"></i>Create Payment Request</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-copy"></i> <span>Cash Advance</span></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-sphere"></i> <span>Cash Advance Settle</span></a></li>
+                <!-- /main -->
+            </ul>
+		</div>
+		<!-- /main navigation -->
+	</div>
+	<!-- /sidebar content -->
+
+</div>
+        <!-- /main sidebar -->
+        <!-- Main content -->
+        <div b-o3je31nlgo class="content-wrapper">
+            <!-- Inner content -->
+            <div b-o3je31nlgo class="content-inner">
+                <!-- Page header -->
+                <!-- /page header -->
+                
+<!-- Page header -->
+<div class="page-header page-header-light no-border-bot">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a class="breadcrumb-item" href=""><i class="icon-home2 mr-2"></i> Home</a>
+                <span class="breadcrumb-item active">Payment Request</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+
+    </div>
+</div>
+<!-- /page header -->
+<!-- Content area -->
+<div class="content pt-1">
+    <!-- Basic datatable -->
+    <div class="card card-cus-ax">
+        <div class="card-header header-elements-inline pb-1">
+            <h5 class="card-title">
+                <b>Payment request</b>
+            </h5>
+            <div class="header-elements">
+                <div class="list-icons">
+                    <button type="button" class="btn btn-link p-0"><img class="mr-2" width="20" height="20" src="img/icon-user-guide.svg" alt="">User guide</button>
+                </div>
+            </div>
+        </div>
+        <div class="border-top-dashed mx-3"></div>
+        <div class="card-body pb-0 py-0">
+            <!--List payment request-->
+            <!--/List payment request-->
+        </div>
+
+        <div id="DataTables_Table_2_wrapper" class="dataTables_wrapper">
+            <div class="datatable-header">
+                <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <div class="">
+                            <a class="btn btn-primary" href="Home/CreatePaymentRequest"><i class="icon-add mr-2"></i>Create</a>
+                        </div>
+                        <div class="ml-3">
+                            <select id="rangeTime" class="select select2 form-control form-control-select2"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="dataTables_length" id="DataTables_Table_2_length">
+                    <label>
+                        <span>Show:</span> <select name="DataTables_Table_2_length" aria-controls="DataTables_Table_2" class="custom-select">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="datatable-scroll">
+                <table class="table datatable-column-search-inputs dataTable table-hover cus-list-items" id="DataTables_Table_2" role="grid" aria-describedby="DataTables_Table_2_info">
+                    <thead>
+                        <tr class="custom-thead" role="row">
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Budget check date</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Due date</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Document number</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Requested by</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Assigned to user</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Final Approver</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Payment type</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Payment status</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Total Amount</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Currency</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                            <td rowspan="1" colspan="1"><select class="custom-select"><option value="0" disabled="" selected="">Filter</option><option value="2008/10/16">2008/10/16</option><option value="2008/11/28">2008/11/28</option><option value="2008/12/13">2008/12/13</option><option value="2008/12/19">2008/12/19</option><option value="2009/01/12">2009/01/12</option><option value="2009/09/15">2009/09/15</option><option value="2010/03/17">2010/03/17</option><option value="2010/10/14">2010/10/14</option><option value="2011/04/25">2011/04/25</option><option value="2011/07/25">2011/07/25</option><option value="2012/03/29">2012/03/29</option><option value="2012/08/06">2012/08/06</option><option value="2012/12/02">2012/12/02</option><option value="2012/12/18">2012/12/18</option><option value="2013/03/03">2013/03/03</option></select></td>
+                            <td rowspan="1" colspan="1"><select class="custom-select"><option value="0" disabled="" selected="">Filter</option><option value="2008/10/16">2008/10/16</option><option value="2008/11/28">2008/11/28</option><option value="2008/12/13">2008/12/13</option><option value="2008/12/19">2008/12/19</option><option value="2009/01/12">2009/01/12</option><option value="2009/09/15">2009/09/15</option><option value="2010/03/17">2010/03/17</option><option value="2010/10/14">2010/10/14</option><option value="2011/04/25">2011/04/25</option><option value="2011/07/25">2011/07/25</option><option value="2012/03/29">2012/03/29</option><option value="2012/08/06">2012/08/06</option><option value="2012/12/02">2012/12/02</option><option value="2012/12/18">2012/12/18</option><option value="2013/03/03">2013/03/03</option></select></td>
+                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="odd">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/02/2023</td>
+                            <td><a href="#">PRFY22-000000058</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment for PO</td>
+                            <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
+                            <td>10.00</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="even">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/01/2023</td>
+                            <td><a href="#">PRFY22-000000059</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment in cash</td>
+                            <td><span class="badge badge-primary-100 text-primary fs-13">In review</span></td>
+                            <td>19.000.000</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="odd">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/02/2023</td>
+                            <td><a href="#">PRFY22-000000058</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment for PO</td>
+                            <td><span class="badge badge-success-100 text-success fs-13">Approved</span></td>
+                            <td>10.00</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="even">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/01/2023</td>
+                            <td><a href="#">PRFY22-000000059</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment in cash</td>
+                            <td><span class="badge badge-danger-100 text-danger fs-13">Rejected</span></td>
+                            <td>19.000.000</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="odd">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/02/2023</td>
+                            <td><a href="#">PRFY22-000000058</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment for PO</td>
+                            <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
+                            <td>10.00</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="even">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/01/2023</td>
+                            <td><a href="#">PRFY22-000000059</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment in cash</td>
+                            <td><span class="badge badge-primary-100 text-primary fs-13">In review</span></td>
+                            <td>19.000.000</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="odd">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/02/2023</td>
+                            <td><a href="#">PRFY22-000000058</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment for PO</td>
+                            <td><span class="badge badge-success-100 text-success fs-13">Approved</span></td>
+                            <td>10.00</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="even">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/01/2023</td>
+                            <td><a href="#">PRFY22-000000059</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment in cash</td>
+                            <td><span class="badge badge-danger-100 text-danger fs-13">Rejected</span></td>
+                            <td>19.000.000</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="odd">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/02/2023</td>
+                            <td><a href="#">PRFY22-000000058</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment for PO</td>
+                            <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
+                            <td>10.00</td>
+                            <td>VND</td>
+                        </tr>
+                        <tr class="even">
+                            <td class="sorting_1">01/01/2023</td>
+                            <td>02/01/2023</td>
+                            <td><a href="#">PRFY22-000000059</a></td>
+                            <td>xuantr</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Nguyễn Văn B</td>
+                            <td>Payment in cash</td>
+                            <td><span class="badge badge-primary-100 text-primary fs-13">In review</span></td>
+                            <td>19.000.000</td>
+                            <td>VND</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="datatable-footer"><div class="dataTables_info" id="DataTables_Table_2_info" role="status" aria-live="polite">Showing 1 to 10 of 15 entries</div><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_2_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_2" data-dt-idx="0" tabindex="-1" id="DataTables_Table_2_previous">←</a><span><a class="paginate_button current" aria-controls="DataTables_Table_2" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="DataTables_Table_2" data-dt-idx="2" tabindex="0">2</a></span><a class="paginate_button next" aria-controls="DataTables_Table_2" data-dt-idx="3" tabindex="0" id="DataTables_Table_2_next">→</a></div></div>
+        </div>
+    </div>
+    <!-- /basic datatable -->
+</div>
+<!-- /content area -->
+
+<script>
+    $(document).ready(function () {
+        // Initialize with options
+        $('.daterange-ranges').daterangepicker(
+            {
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2019',
+                dateLimit: { days: 60 },
+                parentEl: '.content-inner',
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            },
+            function (start, end) {
+                $('.daterange-ranges span').html(start.format('MMMM D, YYYY') + ' &nbsp; - &nbsp; ' + end.format('MMMM D, YYYY'));
+            }
+        );
+
+        // Display date format
+        $('.daterange-ranges span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' &nbsp; - &nbsp; ' + moment().format('MMMM D, YYYY'));
+
+        //Select range tinme to view.
+        var rangeTimeArr = [
+            { id: 0, text: 'Past 30 days' },
+            { id: 1, text: 'Past 60 days' },
+            { id: 2, text: 'Past 90 days' },
+            { id: 3, text: 'Past 180 days' },
+            { id: 4, text: 'Past 1 year' },
+            { id: 5, text: 'Past 2 years' },
+            { id: 6, text: 'All' }
+        ];
+
+        $('#rangeTime').select2({
+            containerCssClass: "form-select cus-font-size",
+            placeholder: "Vui lòng chọn",
+            width: 250,
+            data: rangeTimeArr
+        });
+        $('#rangeTime').trigger('change');
+
+        //Data table.
+
+    });
+    
+</script>
+                <!-- Footer -->
+                <div class="navbar navbar-expand-lg navbar-light border-bottom-0 border-top">
+    <div class="text-center d-lg-none w-100">
+        <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+            <i class="icon-unfold mr-2"></i>
+            Footer
+        </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-footer">
+        <span class="navbar-text">
+            &copy; 2023 - portal - <a href="Home/Privacy">Privacy</a>
+        </span>
+    </div>
+</div>
+                <!-- /footer -->
+            </div>
+            <!-- /inner content -->
+        </div>
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
+    
+
+    <script src="js/site.js?v=nFxEp0x2V_DlU-zth26CPiJ9akSTuuscnu2CbLpk1Fs"></script>
+    
+</body>
+</html>

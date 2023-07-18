@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login - Login</title>
+
+    <!-- Global stylesheets -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="limitless/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" />
+    <link href="limitless/global_assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" />
+    <link href="limitless/assets/css/all.min.css" rel="stylesheet" />
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script src="limitless/global_assets/js/main/jquery.min.js"></script>
+    <script src="limitless/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href="css/site.css" rel="stylesheet" />
+    
+    <script>$(document).ready(function () {
+            var securityToken = $('input[name="__RequestVerificationToken"]').val();
+            var headers = {};
+            headers['__RequestVerificationToken'] = securityToken;
+            $.ajaxSetup({
+                headers: headers
+            });
+        });</script>
+
+</head>
+<body class="custom-scrollbars">
+<form action="/Home/Login" id="__AjaxAntiForgeryForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="CfDJ8KheHp4keuZMobPh6X30GdVKbaQhAzzxdeGDuv_n6laCw_CZQtXKbw9lDFo9vSYW9oCoq4e3tgrB6VVglbXYEz-a4gbvsrYa0AYdLypalz0tYxPSGOb7zGEE6bDTyOK1WOs_Y2WWpr-1nAzbqbJa3ec" /></form>    <!-- Page content -->
+    <div b-9k5qjxj6uy class="page-content">
+        <!-- Main content -->
+        <div b-9k5qjxj6uy class="content-wrapper">
+            <!-- Inner content -->
+            <div b-9k5qjxj6uy class="content-inner">
+                
+<!-- Content area -->
+<div class="row authentication mx-0">
+    <div class="col-xxl-7 col-xl-7 col-lg-12">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-7 col-sm-8 col-12">
+                <!-- Login form -->
+                <div class="p-5">
+                    <div class="card bg-grey-light mb-0" style="border: unset;">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <img width="78" height="62" src="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png" class="custom-logo entered lazyloaded" alt="ILA Vietnam" decoding="async" data-lazy-srcset="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png 78w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-24x19.png 24w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-36x29.png 36w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-48x38.png 48w" data-lazy-sizes="100vw" data-lazy-src="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png" data-ll-status="loaded" sizes="100vw" srcset="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png 78w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-24x19.png 24w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-36x29.png 36w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-48x38.png 48w">
+                                <h5 class="mb-0 text-warning">ILA Information System</h5>
+                                <span class="d-block text-muted">Enter your credentials below</span>
+                            </div>
+
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                <input type="text" class="form-control" placeholder="Username">
+                                <div class="form-control-feedback">
+                                    <i class="icon-user text-muted"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                <input type="password" class="form-control" placeholder="Password">
+                                <div class="form-control-feedback">
+                                    <i class="icon-lock2 text-muted"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <a href="Home/Index" class="btn btn-lg btn-indigo btn-block">Sign in</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /login form -->
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-5 col-xl-5 col-lg-5 d-xl-block d-none px-0">
+        <div class="authentication-cover"></div>
+    </div>
+</div>
+<!-- /content area -->
+            </div>
+            <!-- /inner content -->
+        </div>
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
+    
+
+    <script src="js/site.js?v=nFxEp0x2V_DlU-zth26CPiJ9akSTuuscnu2CbLpk1Fs"></script>
+    
+</body>
+</html>

@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home Page - portal</title>
+
+    <!-- Global stylesheets -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="limitless/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" />
+    <link href="limitless/global_assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" />
+    <link href="limitless/assets/css/all.min.css" rel="stylesheet" />
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script src="limitless/global_assets/js/main/jquery.min.js"></script>
+    <script src="limitless/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    
+    <script>$(document).ready(function () {
+            var securityToken = $('input[name="__RequestVerificationToken"]').val();
+            var headers = {};
+            headers['__RequestVerificationToken'] = securityToken;
+            $.ajaxSetup({
+                headers: headers
+            });
+        });</script>
+    <!-- Theme JS files -->
+    <script src="limitless/global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+    <script src="limitless/global_assets/js/plugins/pickers/pickadate/legacy.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/jgrowl.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/extensions/jquery_ui/interactions.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/ui/prism.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/sweet_alert.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/pnotify.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="limitless/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script src="limitless/assets/js/app.js"></script>
+    <!-- /theme JS files -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href="css/site.css" rel="stylesheet" />
+
+</head>
+<body class="custom-scrollbars">
+<form action="/" id="__AjaxAntiForgeryForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="CfDJ8KheHp4keuZMobPh6X30GdXWeI2DDxBptFKONcMrFKiRSnYP2zXe9tfJChpuxvj2qsPri5jWSpdDQmQ9segIIQ-Wa-qdeQvVr8S_UnHIqk6W-IiuHxH-VChcxxGmVqRm2uSO4Z2wylbV-54sXFm4dXQ" /></form>    <!-- Main navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark navbar-static">
+    <div class="d-flex flex-1 d-lg-none">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+            <i class="icon-paragraph-justify3"></i>
+        </button>
+        <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+            <i class="icon-transmission"></i>
+        </button>
+    </div>
+    <div class="navbar-brand text-center text-lg-left">
+        <a class="nav-link text-white p-0" href="">
+            <i class="icon-home2"></i>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse order-2 order-lg-1" id="navbar-mobile">
+        <div class="navbar-nav ml-lg-auto">
+            <select id="company" class="select select2 form-control form-control-select2"></select>
+        </div>
+    </div>
+    <ul class="navbar-nav flex-row order-1 order-lg-2 flex-1 flex-lg-0 justify-content-end align-items-center">
+        <li class="nav-item nav-item-dropdown-lg dropdown dropdown-user h-100">
+            <a href="#" class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100" data-toggle="dropdown" aria-expanded="false">
+                <img src="img/icon-user.svg" class="rounded-pill mr-lg-2" height="34" alt="" />
+                <span class="d-none d-lg-inline-block">User's name</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#company').select2({
+            width: 250,
+            data: [
+                { id: 1, text: "ILA" }
+            ]
+        });
+        $('#company').val('1');
+        $('#company').trigger('change');
+    });
+</script>
+    <!-- /main navbar -->
+    <!-- Page content -->
+    <div b-o3je31nlgo class="page-content">
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg sidebar-main-resized">
+	<!-- Sidebar content -->
+	<div class="sidebar-content">
+		<!-- User menu -->
+		<div class="sidebar-section sidebar-user my-1">
+			<div class="sidebar-section-body">
+				<div class="media">
+					<a class="mr-3" href="">
+						<img src="img/icon-user.svg" class="rounded-circle" alt="" />
+					</a>
+
+					<div class="media-body">
+						<div class="font-weight-semibold">User's name</div>
+						<div class="font-size-sm line-height-sm opacity-50">
+							Hello
+						</div>
+					</div>
+
+                    <div class="ml-3 align-self-center">
+                        <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                            <i class="icon-transmission"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
+                            <i class="icon-cross2"></i>
+                        </button>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<!-- /user menu -->
+		<!-- Main navigation -->
+		<div class="sidebar-section">
+            <ul class="nav nav-sidebar" data-nav-type="accordion">
+                <!-- Main -->
+                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
+                <li class="nav-item nav-item-submenu nav-item-open">
+                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Payment Request</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Payment Request" style="display: block">
+                        <li class="nav-item"><a class="nav-link" href="Home/PaymentRequest"><i class="icon-list2"></i>List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Home/CreatePaymentRequest"><i class="icon-new-tab"></i>Create</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-copy"></i> <span>Cash Advance</span></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-sphere"></i> <span>Cash Advance Settle</span></a></li>
+                <!-- /main -->
+            </ul>
+		</div>
+		<!-- /main navigation -->
+	</div>
+	<!-- /sidebar content -->
+
+</div>
+        <!-- /main sidebar -->
+        <!-- Main content -->
+        <div b-o3je31nlgo class="content-wrapper">
+            <!-- Inner content -->
+            <div b-o3je31nlgo class="content-inner">
+                <!-- Page header -->
+                <!-- /page header -->
+                
+<!-- Content area -->
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <a class="text-dark" href="Home/PaymentRequest">
+                    <section class="menu-hover">
+                        <img class="mb-2" src="img/icon-payment-request.svg" width="100" height="100">
+                        <div class="menu-hover_inner">
+                            <h3 class="fw-bold">Payment Request</h3>
+                            <p class="">All payment request</p>
+                        </div>
+                    </section>
+                </a>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <a class="text-dark" href="#">
+                    <section class="menu-hover">
+                        <img class="mb-2" src="img/icon-cash-advance.svg" width="100" height="100">
+                        <div class="menu-hover_inner">
+                            <h3 class="fw-bold">Cash Advance</h3>
+                            <p class="">All cash advance</p>
+                        </div>
+                    </section>
+                </a>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <a class="text-dark" href="#">
+                    <section class="menu-hover">
+                        <img class="mb-2" src="img/icon-cash-advance-settles.svg" width="100" height="100">
+                        <div class="menu-hover_inner">
+                            <h3 class="">Cash Advance Settle</h3>
+                            <p class="">All advance settle</p>
+                        </div>
+                    </section>
+                </a>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <a class="text-dark" href="#">
+                    <section class="menu-hover">
+                        <img class="mb-2" src="img/icon-purchase-requisition.svg" width="100" height="100">
+                        <div class="menu-hover_inner">
+                            <h3 class="fw-bold">Purchase Requisitions</h3>
+                            <p class="">All purchase requisitions</p>
+                        </div>
+                    </section>
+                </a>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <a class="text-dark" href="#">
+                    <section class="menu-hover">
+                        <img class="mb-2" src="img/icon-purchase-order.svg" width="100" height="100">
+                        <div class="menu-hover_inner">
+                            <h3 class="">Purchase Order</h3>
+                            <p class="">All purchase order</p>
+                        </div>
+                    </section>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /content area -->
+                <!-- Footer -->
+                <div class="navbar navbar-expand-lg navbar-light border-bottom-0 border-top">
+    <div class="text-center d-lg-none w-100">
+        <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+            <i class="icon-unfold mr-2"></i>
+            Footer
+        </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-footer">
+        <span class="navbar-text">
+            &copy; 2023 - portal - <a href="Home/Privacy">Privacy</a>
+        </span>
+    </div>
+</div>
+                <!-- /footer -->
+            </div>
+            <!-- /inner content -->
+        </div>
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
+    
+
+    <script src="js/site.js?v=nFxEp0x2V_DlU-zth26CPiJ9akSTuuscnu2CbLpk1Fs"></script>
+    
+</body>
+</html>
