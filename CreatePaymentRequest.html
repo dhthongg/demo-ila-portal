@@ -47,6 +47,7 @@
     <script src="limitless/assets/js/app.js"></script>
     <!-- /theme JS files -->
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="css/site.css" rel="stylesheet" />
 
 </head>
@@ -103,59 +104,63 @@
     <div b-o3je31nlgo class="page-content">
         <!-- Main sidebar -->
         <div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg sidebar-main-resized">
-	<!-- Sidebar content -->
-	<div class="sidebar-content">
-		<!-- User menu -->
-		<div class="sidebar-section sidebar-user my-1">
-			<div class="sidebar-section-body">
-				<div class="media">
-					<a class="mr-3" href="">
-						<img src="img/icon-user.svg" class="rounded-circle" alt="" />
-					</a>
-
-					<div class="media-body">
-						<div class="font-weight-semibold">User's name</div>
-						<div class="font-size-sm line-height-sm opacity-50">
-							Hello
-						</div>
-					</div>
-
-                    <div class="ml-3 align-self-center">
-                        <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
-                            <i class="icon-transmission"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
-                            <i class="icon-cross2"></i>
-                        </button>
+            <!-- Sidebar content -->
+            <div class="sidebar-content">
+                <!-- User menu -->
+                <div class="sidebar-section sidebar-user my-1">
+                    <div class="sidebar-section-body">
+                        <div class="media">
+                            <a class="mr-3" href="/">
+                                <img src="img/icon-user.svg" class="rounded-circle" alt="" />
+                            </a>
+        
+                            <div class="media-body">
+                                <div class="font-weight-semibold">User's name</div>
+                                <div class="font-size-sm line-height-sm opacity-50">
+                                    Hello
+                                </div>
+                            </div>
+        
+                            <div class="ml-3 align-self-center">
+                                <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                                    <i class="icon-transmission"></i>
+                                </button>
+        
+                                <button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
+                                    <i class="icon-cross2"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-				</div>
-			</div>
-		</div>
-		<!-- /user menu -->
-		<!-- Main navigation -->
-		<div class="sidebar-section">
-            <ul class="nav nav-sidebar" data-nav-type="accordion">
-                <!-- Main -->
-                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
-                <li class="nav-item nav-item-submenu nav-item-open">
-                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Payment Request</span></a>
-                    <ul class="nav nav-group-sub" data-submenu-title="Payment Request" style="display: block">
-                        <li class="nav-item"><a class="nav-link" href="PaymentRequest.html"><i class="icon-list2"></i>List</a></li>
-                        <li class="nav-item"><a class="nav-link" href="CreatePaymentRequest.html"><i class="icon-new-tab"></i>Create</a></li>
+                </div>
+                <!-- /user menu -->
+                <!-- Main navigation -->
+                <div class="sidebar-section">
+                    <ul class="nav nav-sidebar" data-nav-type="accordion">
+                        <!-- Main -->
+                        <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs cus-sidebar-category-header">Main</div> <i class="icon-menu" title="Main"></i></li>
+                        <li class="nav-item nav-item-submenu nav-item-open">
+                            <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Payment Request</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Payment Request" style="display: block">
+                                <li class="nav-item">
+                                    <a class="nav-link align-items-center cus-nav-item py-1" href="PaymentRequest.html"><span class="material-symbols-outlined mr-2" style="font-size: 10px;">fiber_manual_record</span>List</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items-center cus-nav-item py-1" href="CreatePaymentRequest.html"><span class="material-symbols-outlined mr-2" style="font-size: 10px;">fiber_manual_record</span>Create</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link"><i class="icon-copy"></i> <span>Cash Advance</span></a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"><i class="icon-sphere"></i> <span>Cash Advance Settle</span></a></li>
+                        <!-- /main -->
                     </ul>
-                </li>
-                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-copy"></i> <span>Cash Advance</span></a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-sphere"></i> <span>Cash Advance Settle</span></a></li>
-                <!-- /main -->
-            </ul>
-		</div>
-		<!-- /main navigation -->
-	</div>
-	<!-- /sidebar content -->
-
-</div>
-        <!-- /main sidebar -->
+                </div>
+                <!-- /main navigation -->
+            </div>
+            <!-- /sidebar content -->
+        
+        </div>
+                <!-- /main sidebar -->
         <!-- Main content -->
         <div b-o3je31nlgo class="content-wrapper">
             <!-- Inner content -->
@@ -165,7 +170,7 @@
                 
 <!-- Page header -->
 <div class="page-header page-header-light no-border-bot">
-    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline">
+    <div class="breadcrumb-line breadcrumb-line-light bg-white header-elements-lg-inline">
         <div class="d-flex">
             <div class="breadcrumb">
                 <a class="breadcrumb-item" href="Home.html"><i class="icon-home2 mr-2"></i> Home</a>
