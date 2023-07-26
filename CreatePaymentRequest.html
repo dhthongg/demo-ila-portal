@@ -465,7 +465,7 @@
             <div class="border-top-dashed mb-3 mx-3"></div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="col-xxl-6 col-xl-8 col-lg-12 col-md-12 col-sm-12">
                         <div class="d-flex justify-content-between">
                             <div class="d-flex">
                                 <div class="">
@@ -490,7 +490,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="col-xxl-6 col-xl-8 col-lg-12 col-md-12 col-sm-12">
                         <div class="table-responsive mt-3">
                             <table class="table table-xs">
                                 <thead class="cus-header-lavender">
@@ -576,8 +576,13 @@
             <div class="border-top-dashed mb-3 mx-3"></div>
             <div class="card-body">
                 <div class="d-flex justify-content-start">
-                    <div class="d-flex">
+                    <div class="d-flex align-items-center">
+                        <!--Template-->
                         <div class="">
+                            <a class="info-file-upload" href="javascript:void(0);" id="download-import-acc" title="Tải về">Template.xlsx</a>
+                        </div>
+                        <!--/Template-->
+                        <div class="ml-3">
                             <a href="#" class="btn btn-primary-100 text-primary"><i class="icon-add mr-2"></i>New</a>
                         </div>
                         <div class="ml-3">
@@ -755,6 +760,11 @@
             //minimumResultsForSearch: Infinity,
             data: arr7
         });
+
+        //Add event tải về template để import accounts..
+        // $('#download-import-acc').off('click').on('click', function () {
+        //     window.open('@Url.Action("DownloadTemplateImportAccount", "PotentialCustomer")', '_blank', 'noreferrer');
+        // });
     });
     
 </script>

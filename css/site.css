@@ -22,13 +22,14 @@ body {
 
 .menu-hover {
     border-top: 1px solid #f8f8f8;
-/*    background: #f8f8f8;
+    /*    background: #f8f8f8;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 0.9px 4px, rgba(0, 0, 0, 0.06) 0px 2.6px 8px, rgba(0, 0, 0, 0.05) 0px 5.7px 12px, rgba(0, 0, 0, 0.04) 0px 15px 15px;*/
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     margin: 10px 0px;
     border-radius: 8px;
 }
+
     .menu-hover:hover {
         -webkit-transform: translateY(-20px);
         -ms-transform: translateY(-20px);
@@ -159,10 +160,10 @@ tr:last-child td:last-child {
 
 .custom-thead {
     /*color: #075985;*/
-/*    background-color: var(--blue-100);*/
+    /*    background-color: var(--blue-100);*/
     font-weight: bold;
-/*    color: var(--blue);*/
-/*    text-align: left;*/
+    /*    color: var(--blue);*/
+    /*    text-align: left;*/
 }
 
 
@@ -238,6 +239,7 @@ tr:last-child td:last-child {
     color: var(--blue);
     font-weight: bold;
 }
+
 .cus-header-lavender {
     background-color: rgb(242,238,251);
     color: rgb(126,92,215);
@@ -246,11 +248,11 @@ tr:last-child td:last-child {
 
 /*----------------------------*/
 
-.fs-13{
+.fs-13 {
     font-size: 13px;
 }
 
-.w-10{
+.w-10 {
     width: 10%;
 }
 
@@ -286,16 +288,15 @@ tr:last-child td:last-child {
     width: 50%;
 }
 
-.w-60{
+.w-60 {
     width: 60%;
 }
 
-.w-70{
+.w-70 {
     width: 70%;
 }
 
 .min-height {
-
 }
 
 .c-7b68ee {
@@ -309,6 +310,7 @@ tr:last-child td:last-child {
 /*----------------------------*/
 
 @charset "UTF-8";
+
 :root {
     --purple: rgb(161, 90, 223) !important;
     --purple-100: rgba(244,239,251);
@@ -323,6 +325,7 @@ tr:last-child td:last-child {
 .sidebar-main-unfold {
     width: 15rem;
 }
+
 .sidebar-dark {
     background-color: #111c43;
     color: #a3aed1;
@@ -331,14 +334,15 @@ tr:last-child td:last-child {
 .nav-sidebar .nav-item-header {
     padding: 0.2rem 1.25rem;
 }
-    .sidebar-dark .nav-sidebar .nav-item-header {
-        color: #a3aed1;
-    }
 
-    .sidebar-dark .nav-sidebar .nav-item-open > .nav-link:not(.disabled), .sidebar-dark .nav-sidebar > .nav-item-expanded:not(.nav-item-open) > .nav-link {
-        background-color: rgba(255,255,255,.05);
-        color: #a3aed1;
-    }
+.sidebar-dark .nav-sidebar .nav-item-header {
+    color: #a3aed1;
+}
+
+.sidebar-dark .nav-sidebar .nav-item-open > .nav-link:not(.disabled), .sidebar-dark .nav-sidebar > .nav-item-expanded:not(.nav-item-open) > .nav-link {
+    background-color: rgba(255,255,255,.05);
+    color: #a3aed1;
+}
 
 .sidebar-dark .nav-sidebar .nav-link {
     color: #a3aed1;
@@ -346,6 +350,7 @@ tr:last-child td:last-child {
     /*    margin-left: 0.75rem;*/
     margin: 0 0.75rem 0 0.75rem;
 }
+
 .sidebar-dark .nav-sidebar > .nav-item-submenu > .nav-group-sub {
     background-color: #111c43
 }
@@ -397,17 +402,18 @@ tr:last-child td:last-child {
 
 .btn {
     border-radius: 0.35rem;
-/*    padding: 0.25rem 0.25rem;*/
+    /*    padding: 0.25rem 0.25rem;*/
 }
 
-.text-purple{
+.text-purple {
     color: rgb(151,93,216) !important;
 }
 
 .btn-purple-100 {
     background-color: rgb(244,239,251) !important;
 }
-.bg-purple-100{
+
+.bg-purple-100 {
     background-color: rgb(244,239,251) !important;
 }
 
@@ -421,18 +427,27 @@ a.text-success:focus, a.text-success:hover {
 
 .btn-primary-100:hover {
     background-color: #2196f3;
+    color: white !important;
 }
+
 .btn-warning-100:hover {
     background-color: rgb(255,165,5);
+    color: white !important;
 }
+
 .btn-purple-100:hover {
     background-color: rgb(161, 90, 223) !important;
+    color: white !important;
 }
+
 .btn-pink-100:hover {
     background-color: #f35c86;
+    color: white !important;
 }
+
 .btn-success-100:hover {
     background-color: #25b372;
+    color: white !important;
 }
 
 .content-divider > span:before {
@@ -443,7 +458,7 @@ a.text-success:focus, a.text-success:hover {
     background-image: linear-gradient(to left,transparent,rgb(243,246,248));
     border-radius: 50%;
     background-color: unset;
-/*    inset-inline-end: 0;*/
+    /*    inset-inline-end: 0;*/
     inset-block-start: 1.25rem;
     z-index: -1;
 }
@@ -456,7 +471,7 @@ a.text-success:focus, a.text-success:hover {
     background-image: linear-gradient(to left,rgb(243,246,248),transparent);
     border-radius: 50%;
     background-color: unset;
-/*    inset-inline-start: 0;*/
+    /*    inset-inline-start: 0;*/
     inset-block-start: 1.25rem;
     z-index: -1;
 }
