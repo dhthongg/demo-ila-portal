@@ -1,5 +1,5 @@
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 13.008px;
@@ -70,9 +70,9 @@ body {
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
-    color: var(--blue);
+    color: var(--gray-dark);
 }
 
 .card-subtitle {
@@ -246,8 +246,15 @@ tr:last-child td:last-child {
     font-weight: bold;
 }
 
-/*----------------------------*/
+.cus-list-attach {
+    text-align: center;
+}
 
+    .cus-list-attach td:nth-child(2) {
+        text-align: left;
+    }
+
+/*----------------------------*/
 .fs-13 {
     font-size: 13px;
 }
@@ -421,7 +428,9 @@ a.text-primary:focus, a.text-primary:hover,
 a.text-warning:focus, a.text-warning:hover,
 a.text-purple:focus, a.text-purple:hover,
 a.text-pink:focus, a.text-pink:hover,
-a.text-success:focus, a.text-success:hover {
+a.text-success:focus, a.text-success:hover,
+a.text-indogo:focus, a.text-indigo:hover,
+a.text-teal:focus, a.text-teal:hover {
     color: white !important;
 }
 
@@ -437,6 +446,16 @@ a.text-success:focus, a.text-success:hover {
 
 .btn-purple-100:hover {
     background-color: rgb(161, 90, 223) !important;
+    color: white !important;
+}
+
+.btn-indigo-100:hover {
+    background-color: #5c6bc0 !important;
+    color: white !important;
+}
+
+.btn-teal-100:hover {
+    background-color: #26a69a !important;
     color: white !important;
 }
 

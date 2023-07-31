@@ -44,6 +44,7 @@
     <script src="limitless/global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
     <script src="limitless/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
     <script src="limitless/global_assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/notifications/bootbox.min.js"></script>
     <script src="limitless/assets/js/app.js"></script>
     <!-- /theme JS files -->
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
@@ -168,32 +169,22 @@
                 <!-- Page header -->
                 <!-- /page header -->
                 
-<!-- Page header -->
-<div class="page-header page-header-light no-border-bot">
-    <div class="breadcrumb-line breadcrumb-line-light bg-white header-elements-lg-inline">
-        <div class="d-flex">
-            <div class="breadcrumb">
-                <a class="breadcrumb-item" href="Home.html"><i class="icon-home2 mr-2"></i> Home</a>
-                <a class="breadcrumb-item" href="PaymentRequest.html">Payment request</a>
-                <span class="breadcrumb-item active">Create</span>
-            </div>
-
-            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
-        </div>
-        <div class="header-elements d-none">
-            <div class="breadcrumb justify-content-center">
-                
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /page header -->
 <!-- Content area -->
 <div class="content">
     <!--HEADER-->
     <div class="card card-cus-ax">
-        <div class="card-header header-elements-inline pb-1">
-            <h5 class="card-title">Header</h5>
+        <div class="card-header header-elements-inline py-1">
+            <div class="breadcrumb-line header-elements-lg-inline px-0">
+                <div class="d-flex">
+                    <div class="breadcrumb">
+                        <a class="breadcrumb-item" href="Home.html"><i class="icon-home2 mr-2"></i> Home</a>
+                        <a class="breadcrumb-item" href="PaymentRequest.html">Payment request</a>
+                        <span class="breadcrumb-item active">Create</span>
+                    </div>
+                    <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+                </div>
+            </div>
+            <h5 class="card-title"><b>HEADER</b></h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>
@@ -215,7 +206,13 @@
             </div>
             <div class="d-flex">
                 <div class="ml-3">
-                    <a href="#" class="btn btn-primary"><i class="icon-paperplane mr-2"></i>Submit</a>
+                    <a href="#" class="btn btn-sm btn-teal-100 text-teal btn-attach-files"><i class="icon-attachment mr-2"></i>Attachment</a>
+                </div>
+                <div class="ml-3">
+                    <a href="#" class="btn btn-sm btn-indigo-100 text-indigo"><img class="mr-2" width="20" height="20" src="img/icon-validate.svg" alt="">Validate</a>
+                </div>
+                <div class="ml-3">
+                    <a href="#" class="btn btn-sm btn-primary"><i class="icon-paperplane mr-2"></i>Submit</a>
                 </div>
             </div>
         </div>
@@ -450,117 +447,6 @@
         </div>
     </div>
     <!--/HEADER-->
-    <!--ATTACH-->
-    <div class="card card-cus-ax">
-        <div class="card-header header-elements-inline pb-1">
-            <h5 class="card-title">Attach file</h5>
-            <div class="header-elements">
-                <div class="list-icons">
-                    <a class="list-icons-item" data-action="collapse"></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="collapse show">
-            <div class="border-top-dashed mb-3 mx-3"></div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-xxl-6 col-xl-8 col-lg-12 col-md-12 col-sm-12">
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex">
-                                <div class="">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="uploadFiles" multiple="">
-                                        <label class="custom-file-label" for="uploadFiles">Choose file</label>
-                                    </div>
-                                </div>
-                                <div class="ml-3">
-                                    <a href="#" class="btn btn-primary-100 text-primary"><i class="icon-upload mr-2"></i>Upload</a>
-                                </div>
-                                <div class="ml-3">
-                                    <a href="#" class="btn btn-pink-100 text-pink"><i class="icon-bin mr-2"></i>Delete</a>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <div class="ml-3">
-                                    <a href="#" class="btn btn-success-100 text-success"><i class="icon-folder-open mr-2"></i>Open folder</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xxl-6 col-xl-8 col-lg-12 col-md-12 col-sm-12">
-                        <div class="table-responsive mt-3">
-                            <table class="table table-xs">
-                                <thead class="cus-header-lavender">
-                                    <tr>
-                                        <th class="px-2">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check-file-1">
-                                                <label class="custom-control-label" for="check-file-1"></label>
-                                            </div>
-                                        </th>
-                                        <th class="px-2 text-uppercase text-bold">File name</th>
-                                        <th class="px-2 text-uppercase text-bold">Tools</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="odd">
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check-file-2">
-                                                <label class="custom-control-label" for="check-file-2"></label>
-                                            </div>
-                                        </td>
-                                        <td class="wmin-lg-300">
-                                            File_abc_1.xlsx
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
-                                            <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check-file-3">
-                                                <label class="custom-control-label" for="check-file-3"></label>
-                                            </div>
-                                        </td>
-                                        <td class="wmin-lg-300">
-                                            File_abc_1.xlsx
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
-                                            <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check-file-4">
-                                                <label class="custom-control-label" for="check-file-4"></label>
-                                            </div>
-                                        </td>
-                                        <td class="wmin-lg-300">
-                                            File_abc_1.xlsx
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
-                                            <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!--/ATTACH-->
     <!--LINES-->
     <div class="card card-cus-ax">
         <div class="card-header header-elements-inline pb-1">
@@ -668,9 +554,82 @@
 
     </div>
     <!--/LINES-->
+    <!--ATTACH-->
+    <div id="area-attachment" class="modal fade show" tabindex="-1" style="display: none;" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Attachment</h5>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <!--Browse-->
+                                    <div class="">
+                                        <label class="btn btn-outline-primary btn-sm m-0" for="attachUploadFiles">
+                                            <i class="icon-folder5 mr-1 icon-1x"></i>
+                                            Browse
+                                        </label>
+                                        <input type="file" class="custom-file-input" id="attachUploadFiles" style="display: none;">
+                                    </div>
+                                    <!--/Browse-->
+                                    <!--Upload-->
+                                    <div class="ml-3">
+                                        <a id="attachUploadAll" class="btn btn-primary-100 text-primary"><i class="icon-upload mr-2"></i>Upload</a>
+                                    </div>
+                                    <!--/Upload-->
+                                    <!--Delete-->
+                                    <div class="ml-3">
+                                        <a id="attachDeleteAll" class="btn btn-pink-100 text-pink"><i class="icon-bin mr-2"></i>Delete</a>
+                                    </div>
+                                    <!--/Delete-->
+                                </div>
+                                <div class="d-flex">
+                                    <div class="ml-3">
+                                        <a id="attachOpenFolder" class="btn btn-success-100 text-success disabled"><i class="icon-folder-open mr-2"></i>Open folder</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="table-responsive mt-3">
+                                <table class="table table-xs cus-list-attach">
+                                    <thead class="bg-dark-100">
+                                        <tr>
+                                            <th class="px-2">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="attachSelectAll">
+                                                    <label class="custom-control-label" for="attachSelectAll"></label>
+                                                </div>
+                                            </th>
+                                            <th class="px-2 text-uppercase text-bold">File name</th>
+                                            <th class="px-2 text-uppercase text-bold">Tools</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="area-attachment-content">
+                                        <tr><td colspan="3"><center>No data</center></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ATTACH-->
 </div>
 <!-- /content area -->
-
 <script>
     $(document).ready(function () {
         //Payment Type.
@@ -767,6 +726,169 @@
         // });
     });
     
+</script>
+
+<script type="text/javascript">
+    var PR = {};
+    var listFile = [];
+
+    //Document ready.
+    $(document).ready(function () {
+        PR.Attach_Init();
+    });
+
+    //Init event ban đầu.
+    PR.Attach_Init = function () {
+        //Event upload files.
+        $("#attachUploadFiles").change(function () {
+            PR.AddFiles();
+        });
+        $("#attachUploadFiles").off('click').on('click', function (event) {
+            event.target.value = null
+        });
+
+        //Modal hiển thị cửa sổ thao tác với files.
+        $('.btn-attach-files').off('click').on('click', function () {
+            var htmlAttachment = `<tr class="odd">
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="check-file-2">
+                                                        <label class="custom-control-label" for="check-file-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="wmin-lg-300">
+                                                    File_abc_1.xlsx
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
+                                                    <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="check-file-3">
+                                                        <label class="custom-control-label" for="check-file-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="wmin-lg-300">
+                                                    File_abc_1.xlsx
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
+                                                    <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr class="odd">
+                                                <td>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="check-file-4">
+                                                        <label class="custom-control-label" for="check-file-4"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="wmin-lg-300">
+                                                    File_abc_1.xlsx
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary-100 text-primary btn-icon"><i class="icon-download"></i></button>
+                                                    <button type="button" class="btn btn-pink-100 text-pink btn-icon ml-2"><i class="icon-bin"></i></button>
+                                                </td>
+                                            </tr>`;
+            $('#area-attachment-content').html(htmlAttachment);
+            $('#area-attachment').modal('show');
+        });
+    }
+
+    //-----------------------------Attachment-----------------------------
+
+    //Ẩn hiện btn xóa all
+    PR.Attach_ToggleDeleteAll = function (type) {
+        if (type == 0) {
+            $('#attachDeleteAll').hide('slide');
+        }
+        else {
+            $('#attachDeleteAll').show('slide')
+        }
+    }
+
+    //Ẩn hiện btn upload all
+    PR.Attach_ToggleUploadAll = function(type) {
+        if (type == 0) {
+            $('#attachUploadAll').hide('slide');
+        }
+        else {
+            $('#attachUploadAll').show('slide')
+        }
+    }
+
+    //Ẩn hiện checkbox all
+    PR.Attach_ToggleSelectAll = function(type) {
+        if (type == 0) {
+            $('#attachSelectAll').prop('checked', false)
+        }
+        else {
+            $('#attachSelectAll').prop('checked', true)
+        }
+    }
+
+    //Ẩn hiện btn open folder
+    PR.Attach_ToggleFolder = function(type) {
+        if (type == 0) {
+            $('#attachOpenFolder').addClass('disabled');
+        }
+        else {
+            $('#attachOpenFolder').removeClass('disabled')
+        }
+    }
+
+    //-----------------------------/Attachment----------------------------
+
+    //Ghi nhận tải lên files.
+    PR.AddFiles = function () {
+        var fileInput = document.getElementById("file").files;
+        for (var i = 0; i < fileInput.length; i++) {
+            if (listFile.filter(x => x.Name == fileInput[i].name)[0] === undefined) {
+                listDataFile.push(fileInput[i]);
+                listFile.push({
+                    'IxFile': global.fileImport.countF,
+                    'Name': fileInput[i].name,
+                    'NewFileName': '',
+                    'Total': 0,
+                    'Value': global.fileImport.countF,
+                    'Steps': [
+                        {
+                            'StepIndex': 0,
+                            'StepTitle': 'Import',
+                            'StepStatus': 0
+                        },
+                        {
+                            'StepIndex': 1,
+                            'StepTitle': 'Check Data',
+                            'StepStatus': 0
+                        },
+                        {
+                            'StepIndex': 2,
+                            'StepTitle': 'Check Account',
+                            'StepStatus': 0
+                        }
+                    ],
+                    'Check': false
+                });
+
+                //Tạo HTMl.
+                PR.InitHtmlAttachFiles();
+
+                //
+                //if ($('.btnUpdateAll').prop('disabled')) {
+                //    $(".btnUpdateAll").attr("disabled", false);
+                //}
+            }
+            else {
+                EXT_Toast_Plugin('Lỗi', 'Bạn đã chọn file này rồi!', 'error');
+            }
+        }
+    }
+
 </script>
                 <!-- Footer -->
                 <div class="navbar navbar-expand-lg navbar-light border-bottom-0 border-top">
