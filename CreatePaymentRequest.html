@@ -170,7 +170,7 @@
                 <!-- /page header -->
                 
 <!-- Content area -->
-<div class="content">
+<div class="content pt-1">
     <!--HEADER-->
     <div class="card card-cus-ax">
         <div class="card-header header-elements-inline py-1">
@@ -191,8 +191,8 @@
                 </div>
             </div>
         </div>
-        <div class="border-top-dashed mb-3 mx-3"></div>
-        <div class="d-flex px-3 mb-3 justify-content-between">
+        <div class="border-top-dashed mb-2 mx-3"></div>
+        <div class="d-flex px-3 mb-1 justify-content-between">
             <div class="d-flex">
                 <div class="">
                     <a href="#" class="btn btn-success-100 text-success"><i class="icon-copy3 mr-2"></i>Copy</a>
@@ -223,81 +223,103 @@
                         <!-- Payment request information -->
                         <div class="col-md-4">
                             <fieldset class="">
-                                <legend class="font-weight-semibold mb-3 pb-1"><i class="icon-reading mr-2"></i> Payment request information</legend>
+                                <legend class="font-weight-semibold mb-1 pb-1"><i class="icon-reading mr-2"></i> Payment request information</legend>
                                 <!-- Requested By -->
-                                <div class="form-group">
-                                    <label class="">Requested By:</label>
-                                    <input type="text" id="requestedBy" name="" class="form-control" disabled value="Xuan Tran" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Requested By:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="requestedBy" name="" class="form-control payment-request-info" disabled value="Xuan Tran" placeholder="" data-field="RequestedBy">
+                                    </div>
                                 </div>
                                 <!-- /requested By -->
                                 <!-- Document Number -->
-                                <div class="form-group">
-                                    <label class="">Document Number:</label>
-                                    <input type="text" id="documentNumber" name="" class="form-control" disabled value="PRFY22-000000037" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Document Number:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="documentNumber" name="" class="form-control payment-request-info" disabled value="PRFY22-000000037" placeholder="" data-field="DocumentNumber">
+                                    </div>
                                 </div>
                                 <!-- /document Number -->
                                 <!-- Company -->
-                                <div class="form-group">
-                                    <label class="">Company:</label>
-                                    <input type="text" id="company" name="" class="form-control" disabled value="iloa" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Company:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="company" name="" class="form-control payment-request-info" disabled value="iloa" placeholder="" data-field="Company">
+                                    </div>
                                 </div>
                                 <!-- /company -->
                                 <!-- Payment Type -->
-                                <div class="form-group">
-                                    <label class="">Payment Type:</label>
-                                    <select id="paymentType" class="select select2 form-control form-control-select2"></select>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Payment Type:</label>
+                                    <div class="col-lg-8">
+                                        <select id="paymentType" class="select select2 form-control form-control-select2 payment-request-info" data-field="PaymentType"></select>
+                                    </div>
                                 </div>
                                 <!-- /payment Type -->
                                 <!-- Budget check Date -->
-                                <div class="form-group">
-                                    <label class="">Budget check Date<span class="text-pink">(*)</span>:</label>
-                                    <div class="input-group">
-                                        <input id="budgetCheckDate" type="text" required class="form-control daterange-single" value="18/07/2023">
-                                        <span class="input-group-prepend">
-                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                                        </span>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Budget check Date<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <input id="budgetCheckDate" type="text" required class="form-control daterange-single payment-request-info" value="@DateTime.Now.ToString("dd/MM/yyyy")" data-field="BudgetCheckDate">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /budget check Date -->
                                 <!-- Due Date -->
-                                <div class="form-group">
-                                    <label class="">Due Date:</label>
-                                    <div class="input-group">
-                                        <input id="dueDate" type="text" class="form-control daterange-single" value="18/07/2023">
-                                        <span class="input-group-prepend">
-                                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                                        </span>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Due Date:</label>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <input id="dueDate" type="text" class="form-control daterange-single payment-request-info" value="@DateTime.Now.ToString("dd/MM/yyyy")" data-field="DueDate">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /due Date -->
                                 <!-- Expense Category -->
-                                <div class="form-group">
-                                    <label class="">Expense Category<span class="text-pink">(*)</span>:</label>
-                                    <select id="expenseCategory" required class="select select2 form-control form-control-select2"></select>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Expense Category<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <select id="expenseCategory" required class="select select2 form-control form-control-select2 payment-request-info" data-field="ExpenseCategory"></select>
+                                    </div>
                                 </div>
                                 <!-- /expense Category -->
                                 <!-- Attachment URL -->
-                                <div class="form-group">
-                                    <label class="">Attachment URL:</label>
-                                    <input type="text" id="attachmentURL" name="" class="form-control" disabled value="" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Attachment URL:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="attachmentURL" name="" class="form-control payment-request-info" disabled value="" placeholder="" data-field="AttachmentURL">
+                                    </div>
                                 </div>
                                 <!-- /attachment URL -->
                                 <!-- Department -->
-                                <div class="form-group">
-                                    <label class="">Department<span class="text-pink">(*)</span>:</label>
-                                    <select id="department" required class="select select2 form-control form-control-select2"></select>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Department<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <select id="department" required class="select select2 form-control form-control-select2 payment-request-info" data-field="Department"></select>
+                                    </div>
                                 </div>
                                 <!-- /department-->
                                 <!-- Center -->
-                                <div class="form-group">
-                                    <label class="">Center<span class="text-pink">(*)</span>:</label>
-                                    <select id="center" required class="select select2 form-control form-control-select2"></select>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Center<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <select id="center" required class="select select2 form-control form-control-select2 payment-request-info" data-field="Center"></select>
+                                    </div>
                                 </div>
                                 <!-- /center -->
                                 <!-- Description -->
-                                <div class="form-group">
-                                    <label class="">Description<span class="text-pink">(*)</span>:</label>
-                                    <textarea rows="2" cols="3" id="description" name="" required class="form-control" value="abc" placeholder="Description"></textarea>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Description<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <textarea rows="2" cols="3" id="description" name="" required class="form-control payment-request-info" value="abc" placeholder="Description" data-field="Description"></textarea>
+                                    </div>
                                 </div>
                                 <!-- /description -->
                             </fieldset>
@@ -306,74 +328,96 @@
                         <!-- Vendor information -->
                         <div class="col-md-4">
                             <fieldset class="">
-                                <legend class="font-weight-semibold mb-3 pb-1"><i class="icon-truck mr-2"></i> Vendor information</legend>
+                                <legend class="font-weight-semibold mb-1 pb-1"><i class="icon-truck mr-2"></i> Vendor information</legend>
                                 <!-- Vendor Account -->
-                                <div class="form-group">
-                                    <label class="">Vendor Account<span class="text-pink">(*)</span>:</label>
-                                    <select id="vendorAccount" required class="select select2 form-control form-control-select2"></select>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Vendor Account<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <select id="vendorAccount" required class="select select2 form-control form-control-select2 vendor-info" data-field="VendorAccount"></select>
+                                    </div>
                                 </div>
                                 <!-- /vendor Account -->
                                 <!-- Vendor Name -->
-                                <div class="form-group">
-                                    <label class="">Vendor Name:</label>
-                                    <input type="text" id="vendorName" name="" class="form-control" value="" placeholder="Vendor Name">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Vendor Name:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="vendorName" name="" class="form-control vendor-info" value="" placeholder="Vendor Name" data-field="VendorName">
+                                    </div>
                                 </div>
                                 <!-- /vendor Name -->
                                 <!-- Beneficiary Name -->
-                                <div class="form-group">
-                                    <label class="">Beneficiary Name<span class="text-pink">(*)</span>:</label>
-                                    <input type="text" id="beneficiaryName" name="" required class="form-control" value="abc" placeholder="Beneficiary Name">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Beneficiary Name<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="beneficiaryName" name="" required class="form-control vendor-info" value="abc" placeholder="Beneficiary Name" data-field="BeneficiaryName">
+                                    </div>
                                 </div>
                                 <!-- /beneficiary Name -->
                                 <!-- Bank Account No. -->
-                                <div class="form-group">
-                                    <label class="">Bank Account No.<span class="text-pink">(*)</span>:</label>
-                                    <input type="text" id="bankAccountNo" name="" required class="form-control" value="123" placeholder="Bank Account No.">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Bank Account No.<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="bankAccountNo" name="" required class="form-control vendor-info" value="123" placeholder="Bank Account No." data-field="BankAccountNo">
+                                    </div>
                                 </div>
                                 <!-- /bank Account No. -->
                                 <!-- Bank Name -->
-                                <div class="form-group">
-                                    <label class="">Bank Name<span class="text-pink">(*)</span>:</label>
-                                    <input type="text" id="bankName" name="" required class="form-control" value="xyz" placeholder="Bank Name">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Bank Name<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="bankName" name="" required class="form-control vendor-info" value="xyz" placeholder="Bank Name" data-field="BankName">
+                                    </div>
                                 </div>
                                 <!-- /bank Name -->
                                 <!-- Tax Code (Tax register No.) -->
-                                <div class="form-group">
-                                    <label class="">Tax Code (Tax register No.):</label>
-                                    <input type="text" id="taxCode" name="" class="form-control" value="" placeholder="Tax Code (Tax register No.)">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Tax Code (Tax register No.):</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="taxCode" name="" class="form-control vendor-info" value="" placeholder="Tax Code (Tax register No.)" data-field="TaxCode">
+                                    </div>
                                 </div>
                                 <!-- /tax Code (Tax register No.) -->
                                 <!-- PO Invoice Number -->
-                                <div class="form-group">
-                                    <label class="">PO Invoice Number:</label>
-                                    <select id="poInvoiceNumber" class="select select2 form-control form-control-select2"></select>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">PO Invoice Number:</label>
+                                    <div class="col-lg-8">
+                                        <select id="poInvoiceNumber" class="select select2 form-control form-control-select2 vendor-info" data-field="POInvoiceNumber"></select>
+                                    </div>
                                 </div>
                                 <!-- /po Invoice Number -->
                                 <!-- Currency -->
-                                <div class="form-group">
-                                    <label class="">Currency<span class="text-pink">(*)</span>:</label>
-                                    <select id="currency" required class="select select2 form-control form-control-select2"></select>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Currency<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <select id="currency" required class="select select2 form-control form-control-select2 vendor-info" data-field="Currency"></select>
+                                    </div>
                                 </div>
                                 <!-- /currency -->
                                 <!-- Exchange Rate -->
-                                <div class="form-group">
-                                    <label class="">Exchange Rate<span class="text-pink">(*)</span>:</label>
-                                    <input type="text" id="exchangeRate" name="" required class="form-control" disabled value="1.00" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Exchange Rate<span class="text-pink">(*)</span>:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="exchangeRate" name="" required class="form-control vendor-info" disabled value="1.00" placeholder="" data-field="ExchangeRate">
+                                    </div>
                                 </div>
                                 <!-- /exchange Rate -->
                                 <!-- Total Amount -->
-                                <div class="form-group">
-                                    <label class="">Total Amount:</label>
-                                    <input type="text" id="totalAmount" name="" class="form-control" disabled value="0.00" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Total Amount:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="totalAmount" name="" class="form-control vendor-info" disabled value="0.00" placeholder="" data-field="TotalAmount">
+                                    </div>
                                 </div>
                                 <!-- /total Amount -->
                                 <!-- Request PO Invoice -->
-                                <div class="form-group">
-                                    <label class="">Request PO Invoice:</label>
-                                    <label class="custom-control custom-control-success custom-checkbox">
-                                        <input id="requestPOInvoice" type="checkbox" class="custom-control-input">
-                                        <span class="custom-control-label"></span>
-                                    </label>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Request PO Invoice:</label>
+                                    <div class="col-lg-8">
+                                        <label class="custom-control custom-control-success custom-checkbox">
+                                            <input id="requestPOInvoice" type="checkbox" class="custom-control-input vendor-info" data-field="RequestPOInvoice">
+                                            <span class="custom-control-label"></span>
+                                        </label>
+                                    </div>
                                 </div>
                                 <!-- /request PO Invoice -->
                             </fieldset>
@@ -382,66 +426,83 @@
                         <!-- /Workflow information -->
                         <div class="col-md-4">
                             <fieldset class="mb-3">
-                                <legend class="font-weight-semibold mb-3 pb-1"><i class="icon-file-text2 mr-2"></i> Workflow information</legend>
+                                <legend class="font-weight-semibold mb-1 pb-1"><i class="icon-file-text2 mr-2"></i> Workflow information</legend>
                                 <!-- Status -->
-                                <div class="form-group">
-                                    <label class="">Status:</label>
-                                    <input type="text" id="status" name="" class="form-control" disabled value="Draft" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Status:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="status" name="" class="form-control workflow-info" disabled value="Draft" placeholder="" data-field="Status">
+                                    </div>
                                 </div>
                                 <!-- /status -->
                                 <!-- Assigned to User -->
-                                <div class="form-group">
-                                    <label class="">Assigned to User:</label>
-                                    <input type="text" id="assignedToUser" name="" class="form-control" disabled value="" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Assigned to User:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="assignedToUser" name="" class="form-control workflow-info" disabled value="" placeholder="" data-field="AssignedToUser">
+                                    </div>
                                 </div>
                                 <!-- /assigned to User -->
                                 <!-- Department Head -->
-                                <div class="form-group">
-                                    <label class="">Department Head:</label>
-                                    <input type="text" id="departmentHead" name="" class="form-control" disabled value="" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Department Head:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="departmentHead" name="" class="form-control workflow-info" disabled value="" placeholder="" data-field="DepartmentHead">
+                                    </div>
                                 </div>
                                 <!-- /department Head -->
                                 <!-- Final Approver -->
-                                <div class="form-group">
-                                    <label class="">Final Approver:</label>
-                                    <input type="text" id="finalApprover" name="" class="form-control" disabled value="" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Final Approver:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="finalApprover" name="" class="form-control workflow-info" disabled value="" placeholder="" data-field="FinalApprover">
+                                    </div>
                                 </div>
                                 <!-- /final Approver -->
                                 <!-- Budget checked Status -->
-                                <div class="form-group">
-                                    <label class="">Budget checked Status:</label>
-                                    <input type="text" id="budgetCheckedStatus" name="" class="form-control" disabled value="Budget check not performed" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Budget checked Status:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="budgetCheckedStatus" name="" class="form-control workflow-info" disabled value="Budget check not performed" placeholder="" data-field="BudgetCheckedStatus">
+                                    </div>
                                 </div>
                                 <!-- /budget checked Status -->
                                 <!-- Message Check Budget -->
-                                <div class="form-group">
-                                    <label class="">Message Check Budget:</label>
-                                    <input type="text" id="messagedCheckBudget" name="" class="form-control" disabled value="" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Message Check Budget:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="messagedCheckBudget" name="" class="form-control workflow-info" disabled value="" placeholder="" data-field="MessagedCheckBudget">
+                                    </div>
                                 </div>
                                 <!-- /message Check Budget -->
                                 <!-- WF Status -->
-                                <div class="form-group">
-                                    <label class="">WF Status:</label>
-                                    <input type="text" id="wfStatus" name="" class="form-control" disabled value="" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">WF Status:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="wfStatus" name="" class="form-control workflow-info" disabled value="" placeholder="" data-field="WFStatus">
+                                    </div>
                                 </div>
                                 <!-- /wf Status -->
                                 <!-- Next PIC -->
-                                <div class="form-group">
-                                    <label class="">Next PIC:</label>
-                                    <input type="text" id="nextPIC" name="" class="form-control" disabled value="" placeholder="">
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Next PIC:</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="nextPIC" name="" class="form-control workflow-info" disabled value="" placeholder="" data-field="NextPIC">
+                                    </div>
                                 </div>
                                 <!-- /next PIC -->
                                 <!-- Note -->
-                                <div class="form-group">
-                                    <label class="">Note:</label>
-                                    <textarea rows="2" cols="3" type="text" id="note" name="" class="form-control" value="" placeholder="Note"></textarea>
+                                <div class="form-group row align-items-center mb-1">
+                                    <label class="col-form-label col-lg-4">Note:</label>
+                                    <div class="col-lg-8">
+                                        <textarea rows="2" cols="3" type="text" id="note" name="" class="form-control workflow-info" value="" placeholder="Note" data-field="Note"></textarea>
+                                    </div>
                                 </div>
                                 <!-- /note -->
                             </fieldset>
                         </div>
                         <!-- /workflow information -->
                     </div>
-
                 </form>
             </div>
         </div>
