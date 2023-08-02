@@ -88,6 +88,7 @@
 <script>
     $(document).ready(function () {
         $('#company').select2({
+            containerCssClass: "form-select form-control-sm cus-font-size",
             width: 250,
             data: [
                 { id: 1, text: "ILA" }
@@ -439,7 +440,7 @@
         ];
 
         $('#rangeTime').select2({
-            containerCssClass: "form-select cus-font-size",
+            containerCssClass: "form-select form-control-sm cus-font-size",
             placeholder: "Vui lòng chọn",
             width: 250,
             data: rangeTimeArr

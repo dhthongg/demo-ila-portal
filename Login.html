@@ -18,7 +18,11 @@
     <script src="limitless/global_assets/js/main/bootstrap.bundle.min.js"></script>
     <script src="limitless/global_assets/js/plugins/loaders/blockui.min.js"></script>
     <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script src="limitless/global_assets/js/plugins/velocity/velocity.min.js"></script>
+    <script src="limitless/global_assets/js/plugins/velocity/velocity.ui.min.js"></script>
     <script src="limitless/assets/js/app.js"></script>
+    <!-- /theme JS files -->
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href="css/site.css" rel="stylesheet" />
     
@@ -47,14 +51,18 @@
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-xxl-6 col-xl-6 col-lg-7 col-md-7 col-sm-8 col-12">
                     <div class="p-5">
-                        <div class="mb-3">
-                            <a href="Home.html">
-                                <img class="authentication-brand desktop-logo" width="52" height="42" src="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png" class="custom-logo entered lazyloaded" alt="ILA Vietnam" decoding="async" data-lazy-srcset="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png 78w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-24x19.png 24w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-36x29.png 36w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-48x38.png 48w" data-lazy-sizes="100vw" data-lazy-src="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png" data-ll-status="loaded" sizes="100vw" srcset="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png 78w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-24x19.png 24w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-36x29.png 36w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-48x38.png 48w">
-                            </a>
+                        <div class="par-ax-01">
+                            <div class="mb-3">
+                                <a href="Home.html">
+                                    <img class="authentication-brand desktop-logo" width="52" height="42" src="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png" class="custom-logo entered lazyloaded" alt="ILA Vietnam" decoding="async" data-lazy-srcset="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png 78w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-24x19.png 24w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-36x29.png 36w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-48x38.png 48w" data-lazy-sizes="100vw" data-lazy-src="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png" data-ll-status="loaded" sizes="100vw" srcset="https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila.png 78w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-24x19.png 24w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-36x29.png 36w, https://ila.edu.vn/wp-content/uploads/2023/02/logo-ila-48x38.png 48w">
+                                </a>
+                            </div>
+                            <p class="h4 fw-semibold mb-0">Sign In</p>
+                            <p class="mb-3 text-muted op-7 fw-normal">ILA Information System</p>
                         </div>
-                        <p class="h4 fw-semibold mb-0">Sign In</p>
-                        <p class="mb-3 text-muted op-7 fw-normal">ILA Information System</p>
-                        <a class="btn btn-lg btn-primary btn-block" href="Home.html">Sign In with Azure AD</a>
+                        <div class="par-ax-02">
+                            <a class="btn btn-lg btn-primary btn-block" href="Home.html">Sign In with Azure AD</a>
+                        </div>
                         <!-- <div class="text-center content-divider my-4 py-2">
                             <span class="px-2">OR</span>
                         </div>
@@ -87,23 +95,30 @@
 </div>
 <!-- /content area -->
 
-<!-- <script>
+<script>
     $(document).ready(function () {
-        $('#btnTogglePass').off('click').on('click', function () {
-            var x = $('#signin-password');
-            var y = $('#togglePassEye');
-            if (x.attr('type') == "password") {
-                x.attr('type', "text");
-                y.removeClass('icon-eye-blocked2');
-                y.addClass('icon-eye2');
-            } else {
-                x.attr('type', "password");
-                y.removeClass('icon-eye2');
-                y.addClass('icon-eye-blocked2');
-            }
+        $('.par-ax-01').velocity('transition.slideDownIn', {
+            stagger: 500
         });
+        $('.par-ax-02').velocity('transition.slideUpIn', {
+            stagger: 500
+        });
+
+        // $('#btnTogglePass').off('click').on('click', function () {
+        //     var x = $('#signin-password');
+        //     var y = $('#togglePassEye');
+        //     if (x.attr('type') == "password") {
+        //         x.attr('type', "text");
+        //         y.removeClass('icon-eye-blocked2');
+        //         y.addClass('icon-eye2');
+        //     } else {
+        //         x.attr('type', "password");
+        //         y.removeClass('icon-eye2');
+        //         y.addClass('icon-eye-blocked2');
+        //     }
+        // });
     });
-</script> -->
+</script>
             </div>
             <!-- /inner content -->
         </div>
