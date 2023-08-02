@@ -15,9 +15,9 @@ body {
 }
 
 .menu-hover {
-    padding: 20px 20px;
+    padding: 10px 10px;
     text-align: center;
-    min-height: 240px;
+    min-height: 200px;
 }
 
 .menu-hover {
@@ -255,6 +255,12 @@ tr:last-child td:last-child {
     }
 
 /*----------------------------*/
+.disabled {
+    opacity: .25;
+    cursor: default;
+    pointer-events: none;
+}
+
 .fs-13 {
     font-size: 13px;
 }
@@ -498,6 +504,10 @@ a.text-teal:focus, a.text-teal:hover {
 .content-divider > span {
     background-color: unset;
     display: inline-block;
+}
+
+.breadcrumb-item{
+    padding: .3rem 0;
 }
 
 /*----------------------------*/

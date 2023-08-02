@@ -79,8 +79,6 @@
                 <span class="d-none d-lg-inline-block">User's name</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
-                <div class="dropdown-divider"></div>
                 <a href="Login.html" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
             </div>
         </li>
@@ -170,7 +168,7 @@
                 
 
 <!-- Content area -->
-<div class="content pt-1">
+<div class="content p-2">
     <!-- Basic datatable -->
     <div class="card card-cus-ax">
         <div class="card-header header-elements-inline py-1">
@@ -184,198 +182,217 @@
                     <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
                 </div>
             </div>
-            <h5 class="card-title">
-                <b>PAYMENT REQUEST</b>
-            </h5>
+            <h5 class="card-title"></h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <button type="button" class="btn btn-link p-0"><img class="mr-2" width="20" height="20" src="img/icon-user-guide.svg" alt="">User guide</button>
                 </div>
             </div>
         </div>
-        <div class="border-top-dashed mx-3"></div>
-        <div class="card-body pb-0 py-0">
-            <!--List payment request-->
-            <!--/List payment request-->
-        </div>
-
-        <div id="DataTables_Table_2_wrapper" class="dataTables_wrapper">
-            <div class="datatable-header">
-                <div id="DataTables_Table_2_filter" class="dataTables_filter">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <div class="">
-                            <a class="btn btn-primary" href="CreatePaymentRequest.html"><i class="icon-add mr-2"></i>Create</a>
+        
+        <div class="card-body pb-0 py-2">
+        
+            <ul class="nav nav-tabs nav-tabs-highlight mb-2">
+                <li class="nav-item"><a href="#my_request" class="nav-link active" data-toggle="tab">My requests <span class="badge badge-primary-100 badge-pill text-primary align-top ml-2">23</span></a></li>
+                <li class="nav-item"><a href="#requests_from_subordinates" class="nav-link" data-toggle="tab">Request from subordinates <span class="badge badge-pink-100 badge-pill text-pink align-top ml-2">23</span></a></li>
+                <li class="nav-item"><a href="#inreview_request" class="nav-link" data-toggle="tab">Inreview requests <span class="badge badge-indigo-100 badge-pill text-indigo align-top ml-2">23</span></a></li>
+                <li class="nav-item"><a href="#approved_request" class="nav-link" data-toggle="tab">Approved requests <span class="badge badge-success-100 badge-pill text-success align-top ml-2">23</span></a></li>
+            </ul>
+            <div class="tab-pane fade active show" id="my_request">
+                <div id="DataTables_Table_2_wrapper" class="dataTables_wrapper">
+                    <div class="datatable-header pt-0">
+                        <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <div class="">
+                                    <a class="btn btn-sm btn-primary" href="CreatePaymentRequest.html"><i class="icon-add mr-2"></i>Create</a>
+                                </div>
+                                <div class="ml-3">
+                                    <select id="rangeTime" class="select select2 form-control-sm form-control form-control-select2"></select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="ml-3">
-                            <select id="rangeTime" class="select select2 form-control form-control-select2"></select>
+                        <div class="dataTables_length" id="DataTables_Table_2_length">
+                            <label>
+                                <span>Show:</span> <select name="DataTables_Table_2_length" aria-controls="DataTables_Table_2" class="custom-select">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </label>
                         </div>
                     </div>
-                </div>
-                <div class="dataTables_length" id="DataTables_Table_2_length">
-                    <label>
-                        <span>Show:</span> <select name="DataTables_Table_2_length" aria-controls="DataTables_Table_2" class="custom-select">
-                            <option value="10">10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                        </select>
-                    </label>
-                </div>
-            </div>
-            <div class="datatable-scroll">
-                <table class="table datatable-column-search-inputs dataTable table-hover cus-list-items" id="DataTables_Table_2" role="grid" aria-describedby="DataTables_Table_2_info">
-                    <thead>
-                        <tr class="custom-thead" role="row">
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Budget check date</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Due date</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Document number</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Requested by</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Assigned to user</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Final Approver</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Payment type</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Payment status</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Total Amount</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Currency</th>
-                        </tr>
-                        <tr>
-                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
-                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
-                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
-                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
-                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
-                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
-                            <td rowspan="1" colspan="1"><select class="custom-select"><option value="0" disabled="" selected="">Filter</option><option value="2008/10/16">2008/10/16</option><option value="2008/11/28">2008/11/28</option><option value="2008/12/13">2008/12/13</option><option value="2008/12/19">2008/12/19</option><option value="2009/01/12">2009/01/12</option><option value="2009/09/15">2009/09/15</option><option value="2010/03/17">2010/03/17</option><option value="2010/10/14">2010/10/14</option><option value="2011/04/25">2011/04/25</option><option value="2011/07/25">2011/07/25</option><option value="2012/03/29">2012/03/29</option><option value="2012/08/06">2012/08/06</option><option value="2012/12/02">2012/12/02</option><option value="2012/12/18">2012/12/18</option><option value="2013/03/03">2013/03/03</option></select></td>
-                            <td rowspan="1" colspan="1"><select class="custom-select"><option value="0" disabled="" selected="">Filter</option><option value="2008/10/16">2008/10/16</option><option value="2008/11/28">2008/11/28</option><option value="2008/12/13">2008/12/13</option><option value="2008/12/19">2008/12/19</option><option value="2009/01/12">2009/01/12</option><option value="2009/09/15">2009/09/15</option><option value="2010/03/17">2010/03/17</option><option value="2010/10/14">2010/10/14</option><option value="2011/04/25">2011/04/25</option><option value="2011/07/25">2011/07/25</option><option value="2012/03/29">2012/03/29</option><option value="2012/08/06">2012/08/06</option><option value="2012/12/02">2012/12/02</option><option value="2012/12/18">2012/12/18</option><option value="2013/03/03">2013/03/03</option></select></td>
-                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
-                            <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="odd">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/02/2023</td>
-                            <td><a href="#">PRFY22-000000058</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment for PO</td>
-                            <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
-                            <td>10.00</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="even">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/01/2023</td>
-                            <td><a href="#">PRFY22-000000059</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment in cash</td>
-                            <td><span class="badge badge-primary-100 text-primary fs-13">In review</span></td>
-                            <td>19.000.000</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="odd">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/02/2023</td>
-                            <td><a href="#">PRFY22-000000058</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment for PO</td>
-                            <td><span class="badge badge-success-100 text-success fs-13">Approved</span></td>
-                            <td>10.00</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="even">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/01/2023</td>
-                            <td><a href="#">PRFY22-000000059</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment in cash</td>
-                            <td><span class="badge badge-danger-100 text-danger fs-13">Rejected</span></td>
-                            <td>19.000.000</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="odd">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/02/2023</td>
-                            <td><a href="#">PRFY22-000000058</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment for PO</td>
-                            <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
-                            <td>10.00</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="even">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/01/2023</td>
-                            <td><a href="#">PRFY22-000000059</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment in cash</td>
-                            <td><span class="badge badge-primary-100 text-primary fs-13">In review</span></td>
-                            <td>19.000.000</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="odd">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/02/2023</td>
-                            <td><a href="#">PRFY22-000000058</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment for PO</td>
-                            <td><span class="badge badge-success-100 text-success fs-13">Approved</span></td>
-                            <td>10.00</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="even">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/01/2023</td>
-                            <td><a href="#">PRFY22-000000059</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment in cash</td>
-                            <td><span class="badge badge-danger-100 text-danger fs-13">Rejected</span></td>
-                            <td>19.000.000</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="odd">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/02/2023</td>
-                            <td><a href="#">PRFY22-000000058</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment for PO</td>
-                            <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
-                            <td>10.00</td>
-                            <td>VND</td>
-                        </tr>
-                        <tr class="even">
-                            <td class="sorting_1">01/01/2023</td>
-                            <td>02/01/2023</td>
-                            <td><a href="#">PRFY22-000000059</a></td>
-                            <td>xuantr</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>Payment in cash</td>
-                            <td><span class="badge badge-primary-100 text-primary fs-13">In review</span></td>
-                            <td>19.000.000</td>
-                            <td>VND</td>
-                        </tr>
-                    </tbody>
+                    <div class="datatable-scroll">
+                        <table class="table datatable-column-search-inputs dataTable table-hover cus-list-items" id="DataTables_Table_2" role="grid" aria-describedby="DataTables_Table_2_info">
+                            <thead>
+                                <tr class="custom-thead" role="row">
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Budget check date</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Due date</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Document number</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Requested by</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Assigned to user</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Final Approver</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Payment type</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Payment status</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Total Amount</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1">Currency</th>
+                                </tr>
+                                <tr>
+                                    <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                                    <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                                    <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                                    <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                                    <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                                    <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                                    <td rowspan="1" colspan="1"><select class="custom-select"><option value="0" disabled="" selected="">Filter</option><option value="2008/10/16">2008/10/16</option><option value="2008/11/28">2008/11/28</option><option value="2008/12/13">2008/12/13</option><option value="2008/12/19">2008/12/19</option><option value="2009/01/12">2009/01/12</option><option value="2009/09/15">2009/09/15</option><option value="2010/03/17">2010/03/17</option><option value="2010/10/14">2010/10/14</option><option value="2011/04/25">2011/04/25</option><option value="2011/07/25">2011/07/25</option><option value="2012/03/29">2012/03/29</option><option value="2012/08/06">2012/08/06</option><option value="2012/12/02">2012/12/02</option><option value="2012/12/18">2012/12/18</option><option value="2013/03/03">2013/03/03</option></select></td>
+                                    <td rowspan="1" colspan="1"><select class="custom-select"><option value="0" disabled="" selected="">Filter</option><option value="2008/10/16">2008/10/16</option><option value="2008/11/28">2008/11/28</option><option value="2008/12/13">2008/12/13</option><option value="2008/12/19">2008/12/19</option><option value="2009/01/12">2009/01/12</option><option value="2009/09/15">2009/09/15</option><option value="2010/03/17">2010/03/17</option><option value="2010/10/14">2010/10/14</option><option value="2011/04/25">2011/04/25</option><option value="2011/07/25">2011/07/25</option><option value="2012/03/29">2012/03/29</option><option value="2012/08/06">2012/08/06</option><option value="2012/12/02">2012/12/02</option><option value="2012/12/18">2012/12/18</option><option value="2013/03/03">2013/03/03</option></select></td>
+                                    <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                                    <td rowspan="1" colspan="1"><input type="text" class="form-control input-sm" placeholder=""></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/02/2023</td>
+                                    <td><a href="#">PRFY22-000000058</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment for PO</td>
+                                    <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
+                                    <td>10.00</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="even">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/01/2023</td>
+                                    <td><a href="#">PRFY22-000000059</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment in cash</td>
+                                    <td><span class="badge badge-indigo-100 text-indigo fs-13">In review</span></td>
+                                    <td>19.000.000</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/02/2023</td>
+                                    <td><a href="#">PRFY22-000000058</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment for PO</td>
+                                    <td><span class="badge badge-success-100 text-success fs-13">Approved</span></td>
+                                    <td>10.00</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="even">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/01/2023</td>
+                                    <td><a href="#">PRFY22-000000059</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment in cash</td>
+                                    <td><span class="badge badge-danger-100 text-danger fs-13">Rejected</span></td>
+                                    <td>19.000.000</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/02/2023</td>
+                                    <td><a href="#">PRFY22-000000058</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment for PO</td>
+                                    <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
+                                    <td>10.00</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="even">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/01/2023</td>
+                                    <td><a href="#">PRFY22-000000059</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment in cash</td>
+                                    <td><span class="badge badge-indigo-100 text-indigo fs-13">In review</span></td>
+                                    <td>19.000.000</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/02/2023</td>
+                                    <td><a href="#">PRFY22-000000058</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment for PO</td>
+                                    <td><span class="badge badge-success-100 text-success fs-13">Approved</span></td>
+                                    <td>10.00</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="even">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/01/2023</td>
+                                    <td><a href="#">PRFY22-000000059</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment in cash</td>
+                                    <td><span class="badge badge-danger-100 text-danger fs-13">Rejected</span></td>
+                                    <td>19.000.000</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/02/2023</td>
+                                    <td><a href="#">PRFY22-000000058</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment for PO</td>
+                                    <td><span class="badge badge-warning-100 text-warning fs-13">Draft</span></td>
+                                    <td>10.00</td>
+                                    <td>VND</td>
+                                </tr>
+                                <tr class="even">
+                                    <td class="sorting_1">01/01/2023</td>
+                                    <td>02/01/2023</td>
+                                    <td><a href="#">PRFY22-000000059</a></td>
+                                    <td>xuantr</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Nguyễn Văn B</td>
+                                    <td>Payment in cash</td>
+                                    <td><span class="badge badge-indigo-100 text-indigo fs-13">In review</span></td>
+                                    <td>19.000.000</td>
+                                    <td>VND</td>
+                                </tr>
+                            </tbody>
 
-                </table>
+                        </table>
+                    </div>
+                    <div class="datatable-footer"><div class="dataTables_info" id="DataTables_Table_2_info" role="status" aria-live="polite">Showing 1 to 10 of 15 entries</div><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_2_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_2" data-dt-idx="0" tabindex="-1" id="DataTables_Table_2_previous">←</a><span><a class="paginate_button current" aria-controls="DataTables_Table_2" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="DataTables_Table_2" data-dt-idx="2" tabindex="0">2</a></span><a class="paginate_button next" aria-controls="DataTables_Table_2" data-dt-idx="3" tabindex="0" id="DataTables_Table_2_next">→</a></div></div>
+                </div>
             </div>
-            <div class="datatable-footer"><div class="dataTables_info" id="DataTables_Table_2_info" role="status" aria-live="polite">Showing 1 to 10 of 15 entries</div><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_2_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_2" data-dt-idx="0" tabindex="-1" id="DataTables_Table_2_previous">←</a><span><a class="paginate_button current" aria-controls="DataTables_Table_2" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="DataTables_Table_2" data-dt-idx="2" tabindex="0">2</a></span><a class="paginate_button next" aria-controls="DataTables_Table_2" data-dt-idx="3" tabindex="0" id="DataTables_Table_2_next">→</a></div></div>
+            <!--Request from subordinates-->
+            <div class="tab-pane fade" id="requests_from_subordinates">
+                Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid laeggin.
+            </div>
+            <!--/Request from subordinates-->
+            <!--Inreview requests-->
+            <div class="tab-pane fade" id="inreview_request">
+                Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid laeggin.
+            </div>
+            <!--/Inreview requests-->
+            <!--Approved requests-->
+            <div class="tab-pane fade" id="approved_request">
+                Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid laeggin.
+            </div>
+            <!--/Approved requests-->
         </div>
     </div>
     <!-- /basic datatable -->
